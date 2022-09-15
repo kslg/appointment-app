@@ -2,14 +2,14 @@ from django.http.response import HttpResponseRedirect
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
-# from django.core.mail import EmailMessage, message
+from django.core.mail import EmailMessage, message, send_mail
 from django.conf import settings
 from django.contrib import messages
 from .models import Appointment
 from django.views.generic import ListView
 import datetime
 from django.template import Context
-from django.template.loader import render_to_string 
+from django.template.loader import render_to_string, get_template
 
 # Create your views here.
 
