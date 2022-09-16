@@ -35,7 +35,6 @@ class HomeTemplateView(TemplateView):
 
 
 def appointment_template_view(request):
-    # template_name = "appointment.html"
         form = AppointmentCreationForm()
         if request.method == 'POST':
             form = AppointmentCreationForm(request.POST)
@@ -44,36 +43,6 @@ def appointment_template_view(request):
                 messages.add_message(request, messages.SUCCESS, f"Thanks for making an appointment, we will email you ASAP!")
                 return redirect('appointment')
         return render(request, 'appointment.html', {'form': form})
-        #         return redirect('appointment_add')
-        # return render(request, 'create.html', {'form': form})
-        # pname = request.POST.get("pname")
-        # cname = request.POST.get("cname")
-        # clname = request.POST.get("clname")
-        # tname = request.POST.get("tname")
-        # date = request.POST.get("date")
-        # time = request.POST.get("time")
-        # email = request.POST.get("email")
-        # mobile = request.POST.get("mobile")
-        # comments = request.POST.get("comments")
-
-        # appointment = Appointment.objects.create(
-        #     parent_name=pname,
-        #     child_name=cname,
-        #     class_name=clname,
-        #     teacher=tname,
-        #     date=date,
-        #     time=time,
-        #     email=email,
-        #     phone=mobile,
-        #     comments=comments,
-        # )
-
-        # appointment.save()
-
-        # messages.add_message(request, messages.SUCCESS, f"Thanks for making an appointment, we will email you ASAP!")
-        # return render(request, 'appointment.html', {'form': form})
-        # return HttpResponseRedirect(request.path)
-
 
 
 class ManageAppointmentTemplateView(ListView):
@@ -123,5 +92,3 @@ class ManageAppointmentTemplateView(ListView):
 # AJAX
 def load_classes(request):
     teacher_id = request.GET.get('teacher_id')
-    classes = ClassName.objects.filter(teacher_id=teacher_id)
-    return render(request, 'class_dropdown_list_options.html', {'classes': classes})

@@ -13,16 +13,3 @@ class AppointmentCreationForm(forms.ModelForm):
         widgets = {
             'date': DateInput(),
         }
-
-    # def __init__(self, *args, **kwargs):
-    #     super().__init__(*args, **kwargs)
-    #     self.fields['class_name'].queryset = ClassName.objects.none()
-
-    #     if 'teacher' in self.data:
-    #         try:
-    #             teacher_id = int(self.data.get('teacher'))
-    #             self.fields['class_name'].queryset = ClassName.objects.filter(teacher_id=teacher_id).order_by('name')
-    #         except (ValueError, TypeError):
-    #             pass  # invalid input from the client; ignore and fallback to empty ClassName queryset
-    #     elif self.instance.pk:
-    #         self.fields['class_name'].queryset = self.instance.teacher.classname_set.all()

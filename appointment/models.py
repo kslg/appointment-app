@@ -18,19 +18,12 @@ class Teacher(models.Model):
         return self.name
 
 
-# class ClassName(models.Model):
-#     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
-#     name = models.CharField(max_length=40)
-
-#     def __str__(self):
-#         return self.name
-
 # Create your models here.
 class Appointment(models.Model):
     parent_name = models.CharField(max_length=50)
     child_name = models.CharField(max_length=50)
     teacher = models.ForeignKey(Teacher, on_delete=models.SET_NULL, blank=False, null=True)
-    # class_name = models.ForeignKey(ClassName, on_delete=models.SET_NULL, blank=False, null=True)
+    class_name = models.CharField(max_length=50)
     date = models.DateField()
     time = models.CharField(max_length=80, choices=TIME_SLOTS, default='0')
     email = models.CharField(max_length=50)

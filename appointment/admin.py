@@ -2,7 +2,6 @@ from django.contrib import admin
 from .models import Teacher, Appointment
 # Register your models here.
 
-# admin.site.register(ClassName)
 admin.site.register(Teacher)
 
 @admin.register(Appointment)
