@@ -13,3 +13,4 @@ class AppointmentCreationForm(forms.ModelForm):
         widgets = {
             'date': DateInput(),
         }
+        exclude = ('accepted', 'accepted_date',)
