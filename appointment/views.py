@@ -1,11 +1,12 @@
 from django.http.response import HttpResponseRedirect
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, redirect, get_object_or_404
+from django.http import HttpResponse, JsonResponse
 from django.views.generic.base import TemplateView
 from django.core.mail import EmailMessage, message, send_mail
 from django.conf import settings
 from django.contrib import messages
 from .models import Appointment
+from .forms import AppointmentCreationForm
 from django.views.generic import ListView
 import datetime
 from django.template import Context
@@ -33,28 +34,46 @@ class HomeTemplateView(TemplateView):
         return HttpResponse("Email sent successfully!")
 
 
-class AppointmentTemplateView(TemplateView):
-    template_name = "appointment.html"
+def appointment_template_view(request):
+    # template_name = "appointment.html"
+        form = AppointmentCreationForm()
+        if request.method == 'POST':
+            form = AppointmentCreationForm(request.POST)
+            if form.is_valid():
+                form.save()
+                messages.add_message(request, messages.SUCCESS, f"Thanks for making an appointment, we will email you ASAP!")
+                return redirect('appointment')
+        return render(request, 'appointment.html', {'form': form})
+        #         return redirect('appointment_add')
+        # return render(request, 'create.html', {'form': form})
+        # pname = request.POST.get("pname")
+        # cname = request.POST.get("cname")
+        # clname = request.POST.get("clname")
+        # tname = request.POST.get("tname")
+        # date = request.POST.get("date")
+        # time = request.POST.get("time")
+        # email = request.POST.get("email")
+        # mobile = request.POST.get("mobile")
+        # comments = request.POST.get("comments")
 
-    def post(self, request):
-        fname = request.POST.get("fname")
-        lname = request.POST.get("fname")
-        email = request.POST.get("email")
-        mobile = request.POST.get("mobile")
-        message = request.POST.get("request")
+        # appointment = Appointment.objects.create(
+        #     parent_name=pname,
+        #     child_name=cname,
+        #     class_name=clname,
+        #     teacher=tname,
+        #     date=date,
+        #     time=time,
+        #     email=email,
+        #     phone=mobile,
+        #     comments=comments,
+        # )
 
-        appointment = Appointment.objects.create(
-            first_name=fname,
-            last_name=lname,
-            email=email,
-            phone=mobile,
-            request=message,
-        )
+        # appointment.save()
 
-        appointment.save()
+        # messages.add_message(request, messages.SUCCESS, f"Thanks for making an appointment, we will email you ASAP!")
+        # return render(request, 'appointment.html', {'form': form})
+        # return HttpResponseRedirect(request.path)
 
-        messages.add_message(request, messages.SUCCESS, f"Thanks {fname} for making an appointment, we will email you ASAP!")
-        return HttpResponseRedirect(request.path)
 
 
 class ManageAppointmentTemplateView(ListView):
@@ -99,3 +118,10 @@ class ManageAppointmentTemplateView(ListView):
             "title":"Manage Appointments"
         })
         return context
+
+
+# AJAX
+def load_classes(request):
+    teacher_id = request.GET.get('teacher_id')
+    classes = ClassName.objects.filter(teacher_id=teacher_id)
+    return render(request, 'class_dropdown_list_options.html', {'classes': classes})

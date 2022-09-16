@@ -78,48 +78,40 @@
                 </h3>
                 <p class="blue-text">Use the following form to contact us and request an appointment..</p>
                 <div class="card">
-                    
-                    <form class="form-card" method="POST" action="{% url 'appointment' %}">
-                    {% csrf_token %}
-                        <div class="row justify-content-between text-left">
-                            <div class="form-group col-sm-6 flex-column d-flex"> 
-                            <label class="form-control-label px-3">First name<span class="text-danger"> *</span>
-                            </label> 
-                            <input required type="text" id="fname" name="fname" placeholder="Enter your first name" onblur="validate(1)"> 
-                        </div>
-
-                        <div class="form-group col-sm-6 flex-column d-flex"> 
-                            <label class="form-control-label px-3">Last name<span class="text-danger"> *</span></label> 
-                            <input required type="text" id="lname" name="lname" placeholder="Enter your last name" onblur="validate(2)"> 
-                        </div>
-
-                        </div>
-
-                        <div class="row justify-content-between text-left">
-
-                            <div class="form-group col-sm-6 flex-column d-flex"> 
-                                <label class="form-control-label px-3">Email<span class="text-danger"> *</span>
-                                </label> 
-                                <input type="text" id="email" name="email" placeholder="" onblur="validate(3)"> 
-                            </div>
-
-                            <div class="form-group col-sm-6 flex-column d-flex"> 
-                             <label class="form-control-label px-3">Phone number<span class="text-danger"> *</span></label> 
-                              <input type="text" id="mob" name="mobile" placeholder="" onblur="validate(4)"> 
-                            </div>
-
-                        </div>
-
-                        <div class="row justify-content-between text-left">
-                            <div class="form-group col-12 flex-column d-flex"> 
-                                <label class="form-control-label px-3">Your request<span class="text-danger"> *</span></label> 
-                                <textarea type="text" id="ans" name="request" placeholder="" onblur="validate(6)"></textarea> 
-                            </div>
-                        </div>
-                        <div class="row justify-content-end">
-                            <div class="form-group col-sm-6"> <button type="submit" class="btn-block btn-primary">Send</button> </div>
-                        </div>
+                    <form method="post" id="appointmentForm" data-cities-url="{% url 'ajax_load_classes' %}">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <input type="submit" value="Submit">
                     </form>
+                    
+                    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+                    <script>
+                        $("#id_teacher").change(function () {
+                            const url = $("#appointmentForm").attr("data-classes-url");  // get the url of the `load_cities` view
+                            const countryId = $(this).val();  // get the selected country ID from the HTML input
+                    
+                            $.ajax({                       // initialize an AJAX request
+                                url: url,                    // set the url of the request (= /persons/ajax/load-cities/ )
+                                data: {
+                                    'teacher_id': countryId       // add the country id to the GET parameters
+                                },
+                                success: function (data) {   // `data` is the return of the `load_cities` view function
+                                    $("#id_class_name").html(data);  // replace the contents of the city input with the data that came from the server
+                                    /*
+                    
+                                    let html_data = '<option value="">---------</option>';
+                                    data.forEach(function (city) {
+                                        html_data += `<option value="${city.id}">${city.name}</option>`
+                                    });
+                                    console.log(html_data);
+                                    $("#id_city").html(html_data);
+                    
+                                    */
+                                }
+                            });
+                    
+                        });
+                    </script>
                 </div>
             </div>
         </div>
