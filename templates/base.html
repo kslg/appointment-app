@@ -36,32 +36,16 @@
                 id="navcol-1">
                 <ul class="nav navbar-nav">
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link active" href="#team">Our Team</a>
+                        <a class="nav-link active" href="{% url 'appointment' %}">Make appointment</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link active" href="#services">Services</a>
-                    </li>
-                    
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link active" href="#reviews">Testimonial</a>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link active" href="#contact">Contact Us</a>
+                        <a class="nav-link active" href="{% url 'manage' %}">Teacher Admin</a>
                     </li>
                     {% if request.user.is_authenticated %}
                     <li class="nav-item" role="presentation">
-                      <a class="nav-link active" href="{% url 'manage' %}">Manage</a>
-                  </li>
+                        <a class="nav-link active" href="{% url 'account_logout' %}">Sign Out</a>
+                    </li>
                   {% endif %}
-                  <li class="nav-item" role="presentation">
-                    <a href="{% url 'manage' %}" style="float: left;cursor:pointer;" aria-expanded="true" title="You Have 6 New Appointments">
-                      <i class="far fa-bell" style="font-size: 20px; float: left; color: black">
-                      </i>
-                  </a>
-                  <span class="badge badge-danger">{{count}}</span>
-                </li>
-                  
-         
                 </ul>
             </div>
         </div>
