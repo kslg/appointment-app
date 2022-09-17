@@ -370,12 +370,13 @@
                         <div class="widget-49">
                             <div class="widget-49-title-wrapper">
                                 <div class="widget-49-date-primary">
-                                    <span class="widget-49-date-day">{{app.sent_date|date:"d"}}</span>
-                                    <span class="widget-49-date-month">{{app.sent_date|date:"M"}}</span>
+                                    <span class="widget-49-date-day">{{app.date|date:"d"}}</span>
+                                    <span class="widget-49-date-month">{{app.date|date:"M"}}</span>
                                 </div>
                                 <div class="widget-49-meeting-info">
-                                    <span class="widget-49-pro-title">{{app.email}}</span>
-                                    <span class="widget-49-meeting-time">{{app.phone}}</span>
+                                  <span class="widget-49-pro-title">{{app.get_time_display}}</span>
+                                  <span class="widget-49-pro-title">{{app.email}}</span>
+                                  <span class="widget-49-meeting-time">{{app.phone}}</span>
                                 </div>
                             </div>
                             <div class="widget-49-meeting-points">
@@ -386,9 +387,9 @@
                             <form method="POST" action="{% url 'manage' %}">
                             {% csrf_token %}
                             <div class="form-group">
-                                <input type="date" name="date" class="form-control mb-2" 
+                                <!-- <input type="date" name="date" class="form-control mb-2" 
                                     placeholder="dd-mm-yyyy" value=""
-                                    min="1997-01-01" max="2030-12-31">
+                                    min="1997-01-01" max="2030-12-31"> -->
                                     <input hidden="true" name="appointment-id" value="{{app.id}}">
                                 <input class="btn-block btn-primary form-control" type="submit" value="Accept">
                             </div>

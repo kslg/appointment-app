@@ -61,22 +61,17 @@ class ManageAppointmentTemplateView(ListView):
         appointment.accepted_date = datetime.datetime.now()
         appointment.save()
 
-        data = {
-            "fname":appointment.first_name,
-            "date":date,
-        }
+        # message = get_template('email.html').render(data)
+        # email = EmailMessage(
+        #     "About your appointment",
+        #     message,
+        #     settings.EMAIL_HOST_USER,
+        #     [appointment.email],
+        # )
+        # email.content_subtype = "html"
+        # email.send()
 
-        message = get_template('email.html').render(data)
-        email = EmailMessage(
-            "About your appointment",
-            message,
-            settings.EMAIL_HOST_USER,
-            [appointment.email],
-        )
-        email.content_subtype = "html"
-        email.send()
-
-        messages.add_message(request, messages.SUCCESS, f"You accepted the appointment of {appointment.first_name}")
+        messages.add_message(request, messages.SUCCESS, f"You accepted the appointment of {appointment.parent_name}")
         return HttpResponseRedirect(request.path)
 
 
