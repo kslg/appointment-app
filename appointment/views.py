@@ -5,6 +5,8 @@ from django.views.generic.base import TemplateView
 from django.core.mail import EmailMessage, message, send_mail
 from django.conf import settings
 from django.contrib import messages
+from django.contrib.auth import login, authenticate #login_request
+from django.contrib.auth.forms import AuthenticationForm #login_request
 from .models import Appointment
 from .forms import AppointmentCreationForm
 from django.views.generic import ListView
@@ -34,6 +36,7 @@ class HomeTemplateView(TemplateView):
         return HttpResponse("Email sent successfully!")
 
 
+# CREATE APPOINTMENT
 def appointment_template_view(request):
         form = AppointmentCreationForm()
         if request.method == 'POST':
@@ -45,6 +48,7 @@ def appointment_template_view(request):
         return render(request, 'appointment.html', {'form': form})
 
 
+# MANAGE APPOINTMENT
 class ManageAppointmentTemplateView(ListView):
     template_name = "manage-appointments.html"
     model = Appointment
@@ -87,3 +91,23 @@ class ManageAppointmentTemplateView(ListView):
 # AJAX
 def load_classes(request):
     teacher_id = request.GET.get('teacher_id')
+
+
+# LOGIN PAGE
+def login_request(request):
+	if request.method == "POST":
+		form = AuthenticationForm(request, data=request.POST)
+		if form.is_valid():
+			username = form.cleaned_data.get('username')
+			password = form.cleaned_data.get('password')
+			user = authenticate(username=username, password=password)
+			if user is not None:
+				login(request, user)
+				messages.info(request, f"You are now logged in as {username}.")
+				return redirect("manage")
+			else:
+				messages.error(request,"Invalid username or password.")
+		else:
+			messages.error(request,"Invalid username or password.")
+	form = AuthenticationForm()
+	return render(request=request, template_name="login.html", context={"login_form":form})
