@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'cloudinary_storage',
     'django.contrib.staticfiles',
+    'crispy_forms',
     'appointment',
 ]
 
@@ -55,6 +56,8 @@ SITE_ID=1
 LOGIN_REDIRECT_URL = '/manage-appointments/'
 LOGOUT_REDIRECT_URL = '/'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
