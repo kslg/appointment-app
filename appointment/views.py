@@ -11,8 +11,6 @@ from .models import Appointment
 from .forms import AppointmentCreationForm
 from django.views.generic import ListView
 import datetime
-from django.template import Context
-from django.template.loader import render_to_string, get_template
 
 # Create your views here.
 
@@ -25,15 +23,15 @@ class HomeTemplateView(TemplateView):
         email = request.POST.get("email")
         message = request.POST.get("message")
 
-        email = EmailMessage(
-            subject= f"{name} from doctor family.",
-            body=message,
-            from_email=settings.EMAIL_HOST_USER,
-            to=[settings.EMAIL_HOST_USER],
-            reply_to=[email]
-        )
-        email.send()
-        return HttpResponse("Email sent successfully!")
+        # email = EmailMessage(
+        #     subject= f"{name} from doctor family.",
+        #     body=message,
+        #     from_email=settings.EMAIL_HOST_USER,
+        #     to=[settings.EMAIL_HOST_USER],
+        #     reply_to=[email]
+        # )
+        # email.send()
+        # return HttpResponse("Email sent successfully!")
 
 
 # CREATE APPOINTMENT
@@ -65,7 +63,7 @@ class ManageAppointmentTemplateView(ListView):
         appointment.accepted_date = datetime.datetime.now()
         appointment.save()
 
-        # message = get_template('email.html').render(data)
+        # message = get_template('email.html').render() 
         # email = EmailMessage(
         #     "About your appointment",
         #     message,
@@ -75,8 +73,11 @@ class ManageAppointmentTemplateView(ListView):
         # email.content_subtype = "html"
         # email.send()
 
-        messages.add_message(request, messages.SUCCESS, f"You accepted the appointment of {appointment.parent_name}")
-        return HttpResponseRedirect(request.path)
+        # html_content = render_to_string("email.html")
+        # return render(request, template_name)
+
+        # messages.add_message(request, messages.SUCCESS, f"You accepted the appointment of {appointment.parent_name}")
+        # return HttpResponseRedirect(request.path)
 
 
     def get_context_data(self,*args, **kwargs):
