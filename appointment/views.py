@@ -2,7 +2,7 @@ from django.http.response import HttpResponseRedirect
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse, JsonResponse
 from django.views.generic.base import TemplateView
-from django.core.mail import EmailMessage, message, send_mail
+from django.core.mail import EmailMessage, message
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth import login, authenticate #login_request
@@ -11,6 +11,8 @@ from .models import Appointment
 from .forms import AppointmentCreationForm
 from django.views.generic import ListView
 import datetime
+from django.template import Context
+from django.template.loader import render_to_string, get_template
 
 # Create your views here.
 
@@ -63,7 +65,7 @@ class ManageAppointmentTemplateView(ListView):
         appointment.accepted_date = datetime.datetime.now()
         appointment.save()
 
-        # message = get_template('email.html').render() 
+        # message = get_template('email.html')
         # email = EmailMessage(
         #     "About your appointment",
         #     message,
@@ -73,11 +75,8 @@ class ManageAppointmentTemplateView(ListView):
         # email.content_subtype = "html"
         # email.send()
 
-        # html_content = render_to_string("email.html")
-        # return render(request, template_name)
-
-        # messages.add_message(request, messages.SUCCESS, f"You accepted the appointment of {appointment.parent_name}")
-        # return HttpResponseRedirect(request.path)
+        messages.add_message(request, messages.SUCCESS, f"You accepted the appointment of {appointment.parent_name}")
+        return HttpResponseRedirect(request.path)
 
 
     def get_context_data(self,*args, **kwargs):

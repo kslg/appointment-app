@@ -164,3 +164,4 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'krishantest7@gmail.com'
 EMAIL_HOST_PASSWORD = 'pueazcqqhrmaqymc'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+DEFAULT_FROM_EMAIL = 'krishantest7@gmail.com'
