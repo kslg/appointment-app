@@ -3,7 +3,7 @@ from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic.base import TemplateView
 from django.views.generic import ListView
-from django.core.mail import EmailMessage, message
+from django.core.mail import EmailMessage, message, send_mail
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth import login, authenticate #login_request
@@ -65,15 +65,13 @@ class ManageAppointmentTemplateView(ListView):
         appointment.accepted_date = datetime.datetime.now()
         appointment.save()
 
-        # message = get_template('email.html')
-        # email = EmailMessage(
-        #     "About your appointment",
-        #     message,
-        #     settings.EMAIL_HOST_USER,
-        #     [appointment.email],
-        # )
-        # email.content_subtype = "html"
-        # email.send()
+        # Send Email
+        send_mail(
+            'Your appointment at School', 
+            'test message', 
+            'krishantest7@gmail.com',
+            ['email'],
+            )
 
         messages.add_message(request, messages.SUCCESS, f"You accepted the appointment of {appointment.parent_name}")
         return HttpResponseRedirect(request.path)
