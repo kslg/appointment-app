@@ -1,7 +1,8 @@
 from django.http.response import HttpResponseRedirect
-from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse, JsonResponse
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic.base import TemplateView
+from django.views.generic import ListView
 from django.core.mail import EmailMessage, message
 from django.conf import settings
 from django.contrib import messages
@@ -9,10 +10,9 @@ from django.contrib.auth import login, authenticate #login_request
 from django.contrib.auth.forms import AuthenticationForm #login_request
 from .models import Appointment
 from .forms import AppointmentCreationForm
-from django.views.generic import ListView
-import datetime
 from django.template import Context
 from django.template.loader import render_to_string, get_template
+import datetime
 
 # Create your views here.
 
