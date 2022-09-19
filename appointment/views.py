@@ -64,13 +64,14 @@ class ManageAppointmentTemplateView(ListView):
         appointment.accepted = True
         appointment.accepted_date = datetime.datetime.now()
         appointment.save()
+        email = appointment.email
 
         # Send Email
         send_mail(
             'Your appointment at School', 
             'test message', 
             'krishantest7@gmail.com',
-            ['email'],
+            [email],
             )
 
         messages.add_message(request, messages.SUCCESS, f"You accepted the appointment of {appointment.parent_name}")
