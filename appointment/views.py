@@ -25,35 +25,11 @@ class HomeTemplateView(TemplateView):
         email = request.POST.get("email")
         message = request.POST.get("message")
 
-        # email = EmailMessage(
-        #     subject= f"{name} from doctor family.",
-        #     body=message,
-        #     from_email=settings.EMAIL_HOST_USER,
-        #     to=[settings.EMAIL_HOST_USER],
-        #     reply_to=[email]
-        # )
-        # email.send()
-        # return HttpResponse("Email sent successfully!")
-
-
 # CREATE APPOINTMENT
 def appointment_template_view(request):
         form = AppointmentCreationForm()
         if request.method == 'POST':
             form = AppointmentCreationForm(request.POST)
-            appointment.email = email
-
-            # Send Email
-            send_mail(
-                'Your appointment submitted at Fairchild School',
-                'Hello, your appointment has been submitted. Once\
-                    confirmed you should recieve a confirmation email shortly.\
-                        If you do not reieve confirmation email please call\
-                            the head office.',
-                'krishantest7@gmail.com',
-                [email],
-                )
-
             if form.is_valid():
                 form.save()
                 messages.add_message(request, messages.SUCCESS, f"Thanks for making an appointment, we will email you soon to confirm.")
