@@ -41,8 +41,18 @@ def appointment_template_view(request):
         form = AppointmentCreationForm()
         if request.method == 'POST':
             form = AppointmentCreationForm(request.POST)
+            email = appointment.email
             if form.is_valid():
                 form.save()
+                # Send Email
+                send_mail(
+                    'Your appointment submitted at Fairchild School',
+                    'Hello, your appointment has been submitted. Once\
+                        confirmed you should recieve a confirmation email shortly.\
+                            If you do not reieve confirmation email please call the head office.',
+                    'krishantest7@gmail.com',
+                    [email],
+                    )
                 messages.add_message(request, messages.SUCCESS, f"Thanks for making an appointment, we will email you ASAP!")
                 return redirect('appointment')
         return render(request, 'appointment.html', {'form': form})
@@ -68,8 +78,8 @@ class ManageAppointmentTemplateView(ListView):
 
         # Send Email
         send_mail(
-            'Your appointment at School', 
-            'test message', 
+            'Your appointment confirmed at Fairchild School', 
+            'Hello, your appointment has been confirmed. See you soon.', 
             'krishantest7@gmail.com',
             [email],
             )
