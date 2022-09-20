@@ -41,7 +41,7 @@ def appointment_template_view(request):
         form = AppointmentCreationForm()
         if request.method == 'POST':
             form = AppointmentCreationForm(request.POST)
-            email = appointment.email
+            appointment.email = email
 
             # Send Email
             send_mail(
