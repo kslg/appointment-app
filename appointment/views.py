@@ -33,7 +33,7 @@ def appointment_template_view(request):
             if form.is_valid():
                 form.save()
                 messages.add_message(request, messages.SUCCESS,
-                                     f"Thanks for making an appointment,
+                                     f"Thanks for making an appointment,\
                                      we will email you soon to confirm.")
                 return redirect('appointment')
         return render(request, 'appointment.html', {'form': form})
@@ -47,7 +47,6 @@ class ManageAppointmentTemplateView(ListView):
     login_required = True
     paginate_by = 3
 
-
     def post(self, request):
         date = request.POST.get("date")
         appointment_id = request.POST.get("appointment-id")
@@ -59,23 +58,25 @@ class ManageAppointmentTemplateView(ListView):
 
         # Send Email
         send_mail(
-            'Your appointment confirmed at Fairchild School', 
-            'Hello, your appointment has been confirmed. See you soon.', 
+            'Your appointment confirmed at Fairchild School',
+            'Hello, your appointment has been confirmed. See you soon.',
             'krishantest7@gmail.com',
             [email],
             )
 
-        messages.add_message(request, messages.SUCCESS, f"You accepted the appointment of {appointment.parent_name}")
+        messages.add_message(request, messages.SUCCESS,
+                             f"You accepted the appointment\
+                             of {appointment.parent_name}")
         return HttpResponseRedirect(request.path)
 
-
-    def get_context_data(self,*args, **kwargs):
+    def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         appointments = Appointment.objects.all()
-        context.update({   
-            "title":"Manage Appointments"
+        context.update({
+            "title": "Manage Appointments"
         })
         return context
+
 
 
 # AJAX
