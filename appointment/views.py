@@ -32,7 +32,9 @@ def appointment_template_view(request):
             form = AppointmentCreationForm(request.POST)
             if form.is_valid():
                 form.save()
-                messages.add_message(request, messages.SUCCESS, f"Thanks for making an appointment, we will email you soon to confirm.")
+                messages.add_message(request, messages.SUCCESS,
+                                     f"Thanks for making an appointment,
+                                     we will email you soon to confirm.")
                 return redirect('appointment')
         return render(request, 'appointment.html', {'form': form})
 
@@ -83,19 +85,20 @@ def load_classes(request):
 
 # LOGIN PAGE
 def login_request(request):
-	if request.method == "POST":
-		form = AuthenticationForm(request, data=request.POST)
-		if form.is_valid():
-			username = form.cleaned_data.get('username')
-			password = form.cleaned_data.get('password')
-			user = authenticate(username=username, password=password)
-			if user is not None:
-				login(request, user)
-				messages.info(request, f"You are now logged in as {username}.")
-				return redirect("manage")
-			else:
-				messages.error(request,"Invalid username or password.")
-		else:
-			messages.error(request,"Invalid username or password.")
-	form = AuthenticationForm()
-	return render(request=request, template_name="login.html", context={"login_form":form})
+    if request.method == "POST":
+        form = AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                messages.info(request, f"You are now logged in as {username}.")
+                return redirect("manage")
+            else:
+                messages.error(request, "Invalid username or password.")
+        else:
+            messages.error(request, "Invalid username or password.")
+    form = AuthenticationForm()
+    return render(request=request, template_name="login.html",
+                  context={"login_form": form})
