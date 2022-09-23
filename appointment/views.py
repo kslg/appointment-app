@@ -83,6 +83,8 @@ class ManageAppointmentTemplateView(ListView):
 def delete_appointment(request, appointment_id):
     appointment = get_object_or_404(Appointment, id=appointment_id)
     appointment.delete()
+    messages.add_message(request, messages.SUCCESS,
+                        f"The appointment has been deleted.")
     return redirect('manage')
 
 
