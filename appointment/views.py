@@ -40,7 +40,7 @@ def appointment_template_view(request):
         return render(request, 'appointment.html', {'form': form})
 
 
-# MANAGE APPOINTMENT
+# READ AND UPDATE APPOINTMENT
 class ManageAppointmentTemplateView(ListView):
     template_name = "manage-appointments.html"
     model = Appointment
@@ -79,7 +79,7 @@ class ManageAppointmentTemplateView(ListView):
         return context
 
 
-# # DELETE APPOINTMENT
+# DELETE APPOINTMENT
 def delete_appointment(request, appointment_id):
     appointment = get_object_or_404(Appointment, id=appointment_id)
     appointment.delete()
