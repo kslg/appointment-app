@@ -62,7 +62,7 @@
 {% block content %}
 
     {% if messages %}
-    <div class="card notification-card notification-invitation">
+    <div class="alert alert-success alert-dismissible fade show">
         <div class="card-body">
         {% for message in messages %}
                 <div class="card-title">{{message}} </div>
