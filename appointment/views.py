@@ -13,6 +13,7 @@ from .forms import AppointmentCreationForm
 from django.template import Context
 from django.template.loader import render_to_string, get_template
 import datetime
+from django.urls import reverse
 
 # Create your views here.
 
@@ -77,6 +78,12 @@ class ManageAppointmentTemplateView(ListView):
         })
         return context
 
+
+# # DELETE APPOINTMENT
+def delete_appointment(request, appointment_id):
+    appointment = get_object_or_404(Appointment, id=appointment_id)
+    appointment.delete()
+    return redirect('manage')
 
 
 # AJAX
