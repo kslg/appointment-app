@@ -341,14 +341,24 @@
 {% block content %}
 
 {% if messages %}
-    <div class="card notification-card notification-invitation">
-        <div class="card-body">
-        {% for message in messages %}
-                <div class="card-title">{{message}} </div>
-            {% endfor %}
-        </div>
-      </div> 
-    {% endif %}
+  <div class="alert alert-success alert-dismissible fade show">
+    <div class="card-body">
+      {% for message in messages %}
+        <div class="card-title">{{message}} </div>
+      {% endfor %}
+    </div>
+  </div> 
+{% endif %}
+
+<!-- {% if messages %}
+  <div class="card notification-card notification-invitation">
+    <div class="card-body">
+      {% for message in messages %}
+        <div class="card-title">{{message}} </div>
+      {% endfor %}
+    </div>
+  </div> 
+{% endif %} -->
 
     <div class="container mt-5">
         <div class="col-11 text-center mt-4 mb-4">
