@@ -20,8 +20,8 @@
         {% block style %}{% endblock style %}
         {% block messages %}{% endblock %}
     </style>
+    
     <body>
-
         <div class="header" style="
             background: rgb(177, 177, 177) url('../static/img/header.png') no-repeat fixed center
             {% if "appointment" in request.path %}
@@ -53,11 +53,8 @@
                     </div>
                 </div>
             </nav>
-    
             {% block cta %}{% endblock cta %}
         </div>
-
-
         {% block content %}{% endblock content %}
         {% comment %} Bootstrap JS via jsDelivr {% endcomment %}
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
