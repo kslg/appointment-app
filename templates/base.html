@@ -22,12 +22,7 @@
     </style>
 
     <body>
-        <div class="header" style="
-            background: rgb(177, 177, 177) url('../static/img/header.png') no-repeat fixed center padding-top: 60px;
-            {% if "appointment" in request.path %}
-            max-height:300px!important;min-height:300px!important;
-            {% endif %}
-            ">
+        <div class="header" style="background: rgb(177, 177, 177) url('../static/img/header.png') no-repeat fixed center">
         
             <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search">
                 <div class="container"><a class="navbar-brand" href="{% url 'home' %}">School App</a>
@@ -53,15 +48,17 @@
                     </div>
                 </div>
             </nav>
-            {% block cta %}{% endblock cta %}
+            <!-- {% block cta %}{% endblock cta %} -->
         </div>
 
         {% block content %}
         <!-- Appointment form -->
         {% endblock content %}
-        {% block footer %}
-        <!-- Footer -->
-        {% endblock footer %}
+        <footer class="footer mt-auto py-3">
+            <p class="m-0 text-center text-black">Made by Krishan</p>
+            <p class="m-0 text-center text-black">Get in touch:
+            <i class="fab fa-linkedin ms-3"></i>
+        </footer>
         {% comment %} Bootstrap JS via jsDelivr {% endcomment %}
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
