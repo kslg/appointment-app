@@ -13,22 +13,16 @@
 {% endif %}
 
 {% endblock %}
+{% block content %}
   <div class="container hero">
     <div class="row">
-        <div class="col-12 col-lg-6 col-xl-5 offset-xl-1">
+        <div class="maintext col-12 col-lg-6 col-xl-5 offset-xl-1">
             <h1>Parent Teacher Consultation App</h1>
             <p> Lorem Ipsum</p>
             <a href="{% url 'appointment' %}" class="btn btn-light btn-lg action-button" type="button">Book an appointment</a>
         </div>
     </div>
   </div>
+{% endblock content %}  
 {% endblock cta %}
-
-{% block footer %}
-<footer class="footer mt-auto py-3">
-  <p class="m-0 text-center text-black">Made by Krishan</p>
-  <p class="m-0 text-center text-black">Get in touch:
-      <i class="fab fa-linkedin ms-3"></i>
-</footer>
-{% endblock footer %}
 
