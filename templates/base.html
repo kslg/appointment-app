@@ -17,8 +17,8 @@
     </head>
 
     <style>
-        {% block style %}{% endblock style %}
-        {% block messages %}{% endblock %}
+        {% block messages %}
+        {% endblock %}
     </style>
 
     <body>
@@ -47,12 +47,11 @@
                     </div>
                 </div>
             </nav>
-            <!-- {% block cta %}{% endblock cta %} -->
         </div>
 
         {% block content %}
-        <!-- Appointment form -->
         {% endblock content %}
+
         <footer class="footer mt-auto py-3">
             <p class="m-0 text-center text-black">Made by Krishan</p>
             <p class="m-0 text-center text-black">Get in touch:
