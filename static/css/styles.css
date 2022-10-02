@@ -9,6 +9,14 @@
 }
 
 /*############
+  HOMEPAGE
+##############*/
+
+.mb-5 {
+  padding-right: 9rem;
+}
+
+/*############
   FOOTER
 ##############*/
 
@@ -25,16 +33,14 @@ body, html {
   height: 100%;
 }
 .hero-img {
-  /* The image used */
   background-image: url("../img/background-image.jpg");
-
-  /* Full height */
   height: 90%;
-
-  /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  opacity: 0.8;
+
+
 }
 
 /*############
@@ -875,5 +881,52 @@ CONTACT
     margin-top:190px;
     margin-bottom:24px;
     line-height:1.2;
+  }
+}
+
+@media (min-width:320px) {
+  .mb-5{
+    margin-bottom: -10rem!important;
+  }
+}
+
+@media (min-width:320px) {
+  .hero-img{
+    height: 77%;
+  }
+}
+
+@media (min-width:412px) {
+  .mb-5{
+    margin-bottom: -13rem!important;
+  }
+}
+
+@media (min-width:412px) {
+  .hero-img{
+    height: 86%;
+  }
+}
+
+@media (min-width:375px) {
+  .hero-img{
+    height: 87%;
+  }
+}
+
+/*############
+  TABLET VIEW
+##############*/
+
+@media (min-width:768px) {
+  .mb-5{
+    margin-bottom: 21rem!important;
+  }
+}
+
+@media (min-width:1024px) {
+  .mb-5{
+    margin-bottom: 2rem!important;
+    padding-left: 6%;
   }
 }
