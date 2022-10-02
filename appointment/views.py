@@ -32,6 +32,7 @@ def appointment_template_view(request):
         if request.method == 'POST':
             form = AppointmentCreationForm(request.POST)
             if form.is_valid():
+                human = True
                 form.save()
                 messages.add_message(request, messages.SUCCESS,
                                      f"Thanks for making an appointment,\

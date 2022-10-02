@@ -22,6 +22,7 @@
                 <form method="post" id="appointmentForm" data-cities-url="{% url 'ajax_load_classes' %}">
                     {% csrf_token %}
                     {{ form.as_p }}
+                    <!-- {{form.captcha}} -->
                     <input type="submit" value="Submit">
                 </form>
                 
