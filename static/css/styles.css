@@ -104,6 +104,14 @@ button:focus {
   outline-width: 0
 }
 
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: red;
+}
+
 /*############
   manage-appointment.html
 ##############*/
