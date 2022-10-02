@@ -52,9 +52,9 @@
                   <form method="POST" action="{% url 'manage' %}">
                     {% csrf_token %}
                     <div class="form-group">
-                        <input type="date" name="date" class="form-control mb-2" 
+                        <!-- <input type="date" name="date" class="form-control mb-2" 
                             placeholder="dd-mm-yyyy" value=""
-                            min="1997-01-01" max="2030-12-31">
+                            min="1997-01-01" max="2030-12-31"> -->
                         <input hidden="true" name="appointment-id" value="{{app.id}}">
                         <input class="btn-block btn-primary form-control" type="submit" value="Accept">
                     </div>
@@ -70,9 +70,9 @@
                   <!-- <button href="#modal-{{ app.id }} type="button" class="btn btn-danger" data-toggle="modal" data-target="#staticBackdrop">
                     Delete
                   </button> -->
-                  <a class="btn btn-danger" role="button" data-toggle="modal" data-target="#staticBackdrop">Delete</a>
+                  <a class="btn btn-danger" role="button" data-toggle="modal" data-target="#modal-{{ app.id }}">Delete</a>
                   <!-- Modal -->
-                  <div id="modal-{{ app_id }}" class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                  <div id="modal-{{ app.id }}" class="modal fade" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
                       <div class="modal-content">
                         <div class="modal-header">
@@ -87,7 +87,7 @@
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                          <button href="" type="button" class="btn btn-primary">Delete</button>
+                          <a href="{% url 'delete' app.id %}" type="button" class="btn btn-primary">Delete</a>
                         </div>
                       </div>
                     </div>

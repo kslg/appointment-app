@@ -10,5 +10,5 @@ urlpatterns = [
     path("manage-appointments/", login_required(views.ManageAppointmentTemplateView.as_view()), name="manage"),
     path('ajax/load-classes/', views.load_classes, name='ajax_load_classes'), # AJAX
     path("login/", views.login_request, name="login"),
-    path('delete/<appointment_id>', views.delete_appointment, name='delete'),
+    path('delete/<int:appointment_id>', views.delete_appointment, name='delete'),
 ]
