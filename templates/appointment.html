@@ -19,17 +19,16 @@
             </h3>
             <p class="blue-text">Use the following form to contact us and request an appointment..</p>
             <div class="appointmentcard">
-                <form method="post" id="appointmentForm" data-cities-url="{% url 'ajax_load_classes' %}">
+                <form method="post" id="appointmentForm">
                     {% csrf_token %}
                     {{ form.as_p }}
-                    <!-- {{form.captcha}} -->
-                    <input type="submit" value="Submit" id="bottom">
+                    <input type="submit" value="Submit">
                 </form>
                 
                 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
                 <script>
                     $("#id_teacher").change(function () {
-                        const url = $("#appointmentForm");  // get the url of the `load_classes` view
+                        const url = $("#appointmentForm"); 
                         const teacherId = $(this).val();  // get the selected teacher ID from the HTML input
                 
                         $.ajax({                       // initialize an AJAX request

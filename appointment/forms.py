@@ -7,11 +7,15 @@ class DateInput(forms.DateInput):
     input_type = 'date'
 
 class AppointmentCreationForm(forms.ModelForm):
-    captcha = CaptchaField()
+    captcha = CaptchaField(
+        label='Please enter the characters in the image',
+        required=False,
+        error_messages={'invalid': 'CAPTCHA invalid. Please try again.'}
+    )
     class Meta:
         model = Appointment
         fields = '__all__'
         widgets = {
             'date': DateInput(),
         }
-        exclude = ('accepted', 'accepted_date',)
+        exclude = ('accepted', 'accepted_date')

@@ -26,6 +26,7 @@ class HomeTemplateView(TemplateView):
         email = request.POST.get("email")
         message = request.POST.get("message")
 
+
 # CREATE APPOINTMENT
 def appointment_template_view(request):
         form = AppointmentCreationForm()
@@ -38,6 +39,8 @@ def appointment_template_view(request):
                                      f"Thanks for making an appointment,\
                                      we will email you soon to confirm.")
                 return redirect('appointment')
+            else:
+                messages.error(request, "Blah.")
         return render(request, 'appointment.html', {'form': form})
 
 
