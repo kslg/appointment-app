@@ -29,19 +29,17 @@ class HomeTemplateView(TemplateView):
 
 # CREATE APPOINTMENT
 def appointment_template_view(request):
-        form = AppointmentCreationForm()
-        if request.method == 'POST':
-            form = AppointmentCreationForm(request.POST)
-            if form.is_valid():
-                human = True
-                form.save()
-                messages.add_message(request, messages.SUCCESS,
-                                     f"Thanks for making an appointment,\
-                                     we will email you soon to confirm.")
-                return redirect('appointment')
-            else:
-                messages.error(request, "Blah.")
-        return render(request, 'appointment.html', {'form': form})
+    form = AppointmentCreationForm()
+    if request.method == 'POST':
+        form = AppointmentCreationForm(request.POST)
+        if form.is_valid():
+            human = True
+            form.save()
+            messages.success(request, f"Thanks for making an appointment, we will email you soon to confirm.")
+            return redirect('appointment')
+        else:
+            messages.error(request, f"CAPTCHA Invalid. Letters are case sensitive. Please try again.")
+    return render(request, 'appointment.html', {'form': form})
 
 
 # READ AND UPDATE APPOINTMENT
