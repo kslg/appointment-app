@@ -75,12 +75,23 @@ body, html {
   APPOINTMENT.HTML
 ##############*/
 
+.appointment-background {
+  background-color: #F6F0BC;
+}
+
+.appointmentcard input[type=submit] {
+  background-color: #75773C;
+  color: white;
+  border-color: #535040;
+}
+
 .appointmentcard {
+  background-color: #F6F0BC;
   padding: 30px 40px;
   margin-top: 60px;
   margin-bottom: 60px;
       border: none !important;
-      box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2)
+      box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.9)
   }
 
 .blue-text {
