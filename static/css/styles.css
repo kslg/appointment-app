@@ -16,6 +16,10 @@
   padding-right: 9rem;
 }
 
+/* .row {
+  margin-right: 0;
+} */
+
 /*############
   FOOTER
 ##############*/
@@ -44,7 +48,7 @@ body, html {
 }
 
 /*############
-  appointment.html
+  APPOINTMENT.HTML
 ##############*/
 
 .appointmentcard {
@@ -116,8 +120,17 @@ ul {
   list-style-type: none;
 }
 
+ {
+  grid-template-columns:
+}
+
+textarea {
+  height: 7em;
+  width: 16em;
+}
+
 /*############
-  manage-appointment.html
+  MANAGE.APPOINTMENT.HTML
 ##############*/
 
 .card-margin {
@@ -623,89 +636,6 @@ text-transform: uppercase;
 }
 
 /*############
-TESTIMONIALS
-##############*/
-
-.carousel .carousel-item {
-  color: #999;
-  font-size: 14px;
-  text-align: center;
-  overflow: hidden;
-  min-height: 340px;
-}
-.carousel .carousel-item a {
-  color: #eb7245;
-}
-.carousel .img-box {
-  width: 145px;
-  height: 145px;
-  margin: 0 auto;
-  border-radius: 50%;
-}
-.carousel .img-box img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  border-radius: 50%;
-}
-.carousel .testimonial {	
-  padding: 30px 100px 10px;
-}
-.carousel .overview {	
-  text-align: center;
-  padding-bottom: 5px;
-}
-.carousel .overview b {
-  color: #333;
-  font-size: 15px;
-  text-transform: uppercase;
-  display: block;	
-  padding-bottom: 5px;
-}
-.carousel .star-rating i {
-  font-size: 18px;
-  color: #ffdc12;
-}
-.carousel-control-prev, .carousel-control-next {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: #999;
-  text-shadow: none;
-  top: 4px;
-}
-.carousel-control-prev i, .carousel-control-next i {
-  font-size: 20px;
-  margin-right: 2px;
-}
-.carousel-control-prev {
-  left: auto;
-  right: 40px;
-}
-.carousel-control-next i {
-  margin-right: -2px;
-}
-.carousel .carousel-indicators {
-  bottom: 15px;
-}
-.carousel-indicators li, .carousel-indicators li.active {
-  width: 11px;
-  height: 11px;
-  margin: 1px 5px;
-  border-radius: 50%;
-}
-.carousel-indicators li {	
-  background: #e2e2e2;
-  border: none;
-}
-.carousel-indicators li.active {		
-  background: #888;		
-}
-
-
-
-
-/*############
 CONTACT
 ##############*/
 
@@ -735,17 +665,6 @@ CONTACT
 .con_sub_text {
   margin: 20px 0px;
   font-size: 15px;
-}
-
-.contact-detail-box {
-  margin-bottom: 50px;
-}
-
-.contact-detail-box address {
-  font-size: 14px;
-}
-.contact-map {
-  background-color: #ededed;
 }
 
 .title-box .border,.btn-primary,.back-to-top,
@@ -786,9 +705,10 @@ CONTACT
   box-shadow: 1px 5px 9px rgba(241, 96, 1, 0.32);
 }
 
+/*########################
+  RESPONSIVE TABLET VIEW
+##########################*/
 
-
-/*======= Responsive ======*/
 @media (min-width: 768px) {
     .nav-custom-left {
     margin-left: 5%;
@@ -796,10 +716,6 @@ CONTACT
   .navbar-nav>li>a {
     padding-top: 10px;
     padding-bottom: 10px;
-  }
-  .contact-page .col-sm-6 {
-    padding-left: 30px;
-    padding-right: 30px;
   }
 }
 
@@ -819,7 +735,6 @@ CONTACT
     margin-top: 30px;
   }
 }
-
 
 @media only screen and (min-width: 768px) and (max-width: 991px){
   .blog-wrapper .blog-item {
@@ -896,6 +811,23 @@ CONTACT
   }
 }
 
+@media (min-width:1024px) {
+  .mb-5{
+    margin-bottom: 2rem!important;
+    padding-left: 6%;
+  }
+}
+
+@media (min-width:768px) {
+  .px-1 {
+    padding-right: 1.25rem!important;
+  }
+}
+
+/*########################
+  RESPONSIVE MOBILE VIEW
+##########################*/
+
 @media (min-width:320px) {
   .mb-5{
     margin-bottom: -10rem!important;
@@ -904,13 +836,13 @@ CONTACT
 
 @media (min-width:320px) {
   .hero-img{
-    height: 77%;
+    height: 88%;
   }
 }
 
 @media (min-width:412px) {
   .mb-5{
-    margin-bottom: -13rem!important;
+    margin-bottom: -6rem!important;
   }
 }
 
@@ -922,23 +854,23 @@ CONTACT
 
 @media (min-width:375px) {
   .hero-img{
-    height: 87%;
+    height: 88%;
   }
 }
 
-/*############
-  TABLET VIEW
-##############*/
-
-@media (min-width:768px) {
-  .mb-5{
-    margin-bottom: 21rem!important;
+@media (min-width:320px) {
+  textarea {
+    height: 6em;
+    width: 12em;
   }
 }
 
-@media (min-width:1024px) {
+/*########################
+  RESPONSIVE LAPTOP VIEW
+##########################*/
+
+@media (min-width:1280px) {
   .mb-5{
-    margin-bottom: 2rem!important;
-    padding-left: 6%;
+    margin-bottom: 6rem!important;
   }
 }
