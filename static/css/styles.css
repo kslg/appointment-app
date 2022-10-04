@@ -864,10 +864,17 @@ CONTACT
   }
 }
 
+@media (min-width:320px) {
+  .homepage-content.card{
+    padding-right: 1rem;
+    height: 168px;
+  }
+}
+
 @media (min-width:412px) {
   .mb-5{
     margin-bottom: -11rem!important;
-    padding-left: 3rem;
+    padding-left: 1rem;
   }
 }
 
@@ -879,7 +886,7 @@ CONTACT
 
 @media (min-width:412px) {
   .homepage-content h2{
-    margin-top: 11px;
+    margin-top: 16px;
   }
 }
 
@@ -903,5 +910,17 @@ CONTACT
 @media (min-width:1280px) {
   .mb-5{
     margin-bottom: 6rem!important;
+  }
+}
+
+@media (min-width:1280px) {
+  .homepage-content.card{
+    height: 133px;
+  }
+}
+
+@media (min-width: 802px) {
+  .hero-img {
+      height: 90%;
   }
 }
