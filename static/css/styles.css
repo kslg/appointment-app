@@ -16,9 +16,33 @@
   padding-right: 9rem;
 }
 
-/* .row {
-  margin-right: 0;
-} */
+.homepage-content.card {
+  border: 0;
+  box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+  -ms-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+}
+
+.homepage-content.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: rgba(246, 240, 188, 0.7);
+  background-clip: border-box;
+  border: 1px solid background-color: rgba(25, 18, 232, 0.2);
+  border-radius: 8px;
+  padding-right: 4rem;
+  height: 170px;
+}
+
+.btn-light {
+  background-color: #75773C;
+  color: white;
+  border-color: #535040;
+}
 
 /*############
   FOOTER
@@ -842,13 +866,20 @@ CONTACT
 
 @media (min-width:412px) {
   .mb-5{
-    margin-bottom: -6rem!important;
+    margin-bottom: -11rem!important;
+    padding-left: 3rem;
   }
 }
 
 @media (min-width:412px) {
   .hero-img{
     height: 86%;
+  }
+}
+
+@media (min-width:412px) {
+  .homepage-content h2{
+    margin-top: 11px;
   }
 }
 
