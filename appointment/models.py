@@ -26,7 +26,7 @@ class Appointment(models.Model):
     class_name = models.CharField(max_length=50)
     date = models.DateField()
     time = models.CharField(max_length=80, choices=TIME_SLOTS, default='0')
-    email = models.CharField(max_length=50)
+    email = models.EmailField(max_length=50)
     phone = models.CharField(max_length=50)
     comments = models.TextField(blank=True)
     sent_date = models.DateField(auto_now_add=True)
