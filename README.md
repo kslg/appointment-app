@@ -129,10 +129,13 @@ Montserrat was used due to it's warm style and being easy to read. The are quali
 4. Problem: If appointment is no longer needed then it need to be removed from the appointments list.
 - Solution: The `Admin` can delete appointment records from the Admin Area.
 
-5. Problem: Need to stop harmful bots and malicious attacks from usng the form to crach the site.
+5. Problem: Harmful bots and malicious attackers could use the appintment form to crash the site.
 - Solution: Implement a CAPTCHA to the form so human intervention is needed to submit the form.
+- CAPTCHA (Completely Automated Public Turing test to tell Computers and Humans Apart) is a type of security measure known as challenge-response authentication. CAPTCHA helps protect the site from spam and automated scipts by asking the `User` to complete a simple test that proves you are human and not a computer trying to break into a password protected account.
 
-6. Problem: 
+A CAPTCHA test is made up of two simple parts: a randomly generated sequence of letters and/or numbers that appear as a distorted image, and a text box. To pass a the test and prove your human identity, simply type the characters you see in the image into the text box.
+
+6. Problem: The Teacher 
 
 
 
