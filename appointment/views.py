@@ -95,6 +95,12 @@ def load_classes(request):
     teacher_id = request.GET.get('teacher_id')
 
 
+def test(request):
+    form=MyForm()
+
+    return render(request,'captcha/home.html',{'form':form})
+
+
 # LOGIN PAGE
 def login_request(request):
     if request.method == "POST":

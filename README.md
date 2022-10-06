@@ -75,10 +75,18 @@ I used the 5 Planes of UX to provide a conceptual framework.
 
 ## Strategy Plane:
 
+### Target Audience / Demographic:
+
+- Target Audience: 
+`Users` Parents, Guardians and Carers.
+`Admin` Teachers.
+`Super Admim` School IT Department / School Office Admins.
+
 ### Mission Objectives / The What:
 
-- To develop an `mvp (minimum viable product)` that allows parents to book appointments with teachers for parents evening and other consultations.
+- To develop an `mvp (minimum viable product)` that allows `Users` to book appointments with `Admin` Teachers for parents evening and other consultations.
 - The app must be simple, easy for parents to use and must be able to book an appointment in `less than three clicks`.
+- `Super Admins` will have backend access to manage appointments for the Users and Admin.
 
 ### The Why:
 
@@ -88,19 +96,46 @@ I used the 5 Planes of UX to provide a conceptual framework.
 ![image](/documentation/readme_folder/images/mindmap_1.png)
 ![image](/documentation/readme_folder/images/mindmap2.png)
 
-### Target Audience / Demographic:
-
-- Target Audience: Parents, Guardians, Carers and Teachers.
 
 
 ### Colour Palette Ideas:
 ![image](/documentation/readme_folder/images/color_pallette_ideas.png)
 
-## Scope Plane:
-
 ### Content Strategy:
 
+- Main functionality is to book an appointment with the child's teacher.
+- The Teacher has thier own admin area to view appointments and accept the appointment.
+- The booking form will be easy to get to via the top navigation header or from the CTA button on the homepage.
+
+
 ### Typography:
+https://fonts.google.com/
+Montserrat was used due to it's warm style and being easy to read. The are qualities found in most school websites.
+![image](/documentation/readme_folder/images/google_fonts.png)
+
+## Scope Plane:
+
+### Functional Requirements:
+
+1. Problem: The `User` needs to have direct access to the appointment form to make an appointment.
+- Solution: Acces the form in less than three clicks.
+
+2. Problem: `Users` must not be allowed to see other `User` appointments order to protect their sensitive data.
+- Solution: Create an Admin Area so only Teachers can login and gain access.
+
+3. Problem: `Users` need to be notified that thier appointment is confirmed.
+- Solution: The `Admin` can accpect the appointment which then sends a confirmtion email to the `User`
+
+4. Problem: If appointment is no longer needed then it need to be removed from the appointments list.
+- Solution: The `Admin` can delete appointment records from the Admin Area.
+
+5. Problem: Need to stop harmful bots and malicious attacks from usng the form to crach the site.
+- Solution: Implement a CAPTCHA to the form so human intervention is needed to submit the form.
+
+6. Problem: 
+
+
+
 
 
 
