@@ -1,5 +1,13 @@
 <h1 align="center">Fairchild School Parent-teacher Booking App </h1>
 
+Developer: Krishan Gharu
+
+[Visit this website]()
+
+![Responsive Image]()
+
+<br>
+
 ## **Contents**
 
 * [About](#About)
@@ -49,9 +57,9 @@
 
 * [Acknowledgments](#Acknowledgments)
 
-## About
+# About
 
-[Fairchild School Appointment App](http link) is for a fictitious school called Fairchild School, and allows Parents to book a virtual consultation with their child’s Teacher. The App is responsive so users can book and manage appointments on mobile and tablet devices, while on the go.  
+[Fairchild School Appointment App](http link) is for a fictitious school called Fairchild School, and allows Parents, Guardians, Carers to book a consultation with their child’s Teacher. The App is responsive so Parent can book and Teachers can manage appointments on mobile and tablet devices.
 
 The app is developed by [Krishan Gharu](https://github.com/kslg).
 
@@ -60,16 +68,44 @@ Repository: [GitHub Repo](http link)
 
 [Back to contents](#contents)
 
-## User Experience Design
+# User Experience Design
 
-### Strategy
-
-
-### Target Audience
+I used the 5 Planes of UX to provide a conceptual framework.
 
 
+## Strategy Plane:
 
-### User Stories
+### Mission Objectives / The What:
+
+- To develop an `mvp (minimum viable product)` that allows parents to book appointments with teachers for parents evening and other consultations.
+- The app must be simple, easy for parents to use and must be able to book an appointment in `less than three clicks`.
+
+### The Why:
+
+- The school was using paper forms which becomes costly and is environmentally unfriendly.
+
+### Ideas & Inspiration Mind Map
+![image](/documentation/readme_folder/images/mindmap_1.png)
+![image](/documentation/readme_folder/images/mindmap2.png)
+
+### Target Audience / Demographic:
+
+- Target Audience: Parents, Guardians, Carers and Teachers.
+
+
+### Colour Palette Ideas:
+![image](/documentation/readme_folder/images/color_pallette_ideas.png)
+
+## Scope Plane:
+
+### Content Strategy:
+
+### Typography:
+
+
+
+
+## User Stories
 
 #### **First Time Visitor Goals**
 
