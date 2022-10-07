@@ -52,9 +52,19 @@ body{
 }
 
 .btn-light {
-  background-color: #75773C;
-  color: white;
-  border-color: #535040;
+  background-color:#5c724a;
+  color:#f5f5d5;
+  border-color:#5c724a;
+}
+
+.homepage-content h2 {
+  color: #354a2f;
+}
+
+.btn-light:hover {
+  background-color:#f5f5d5;
+  color:#5c724a;
+  border-color:#f5f5d5;
 }
 
 /*############
