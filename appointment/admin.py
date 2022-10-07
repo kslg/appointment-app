@@ -4,6 +4,7 @@ from .models import Teacher, Appointment
 
 admin.site.register(Teacher)
 
+
 @admin.register(Appointment)
 class Admin (admin.ModelAdmin):
 

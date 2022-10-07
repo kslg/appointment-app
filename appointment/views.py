@@ -6,8 +6,8 @@ from django.views.generic import ListView
 from django.core.mail import EmailMessage, message, send_mail
 from django.conf import settings
 from django.contrib import messages
-from django.contrib.auth import login, authenticate #login_request
-from django.contrib.auth.forms import AuthenticationForm #login_request
+from django.contrib.auth import login, authenticate  # login_request
+from django.contrib.auth.forms import AuthenticationForm  # login_request
 from .models import Appointment
 from .forms import AppointmentCreationForm
 from django.template import Context
@@ -15,12 +15,12 @@ from django.template.loader import render_to_string, get_template
 import datetime
 from django.urls import reverse
 
-# Create your views here.
+# Views Start Here
 
 
 class HomeTemplateView(TemplateView):
     template_name = "index.html"
-    
+
     def post(self, request):
         name = request.POST.get("name")
         email = request.POST.get("email")
@@ -35,10 +35,12 @@ def appointment_template_view(request):
         if form.is_valid():
             human = True
             form.save()
-            messages.success(request, f"Thanks for making an appointment, we will email you soon to confirm.")
+            messages.success(request, f"Thanks for making an appointment, we\
+                             will email you soon to confirm.")
             return redirect('appointment')
         else:
-            messages.error(request, f"CAPTCHA Invalid. Letters are case sensitive. Please try again.")
+            messages.error(request, f"CAPTCHA Invalid. Letters are case\
+                           sensitive. Please try again.")
     return render(request, 'appointment.html', {'form': form})
 
 
@@ -86,19 +88,13 @@ def delete_appointment(request, appointment_id):
     appointment = get_object_or_404(Appointment, pk=appointment_id)
     appointment.delete()
     messages.add_message(request, messages.SUCCESS,
-                        f"The appointment has been deleted.")
+                         f"The appointment has been deleted.")
     return redirect('manage')
 
 
 # AJAX
 def load_classes(request):
     teacher_id = request.GET.get('teacher_id')
-
-
-def test(request):
-    form=MyForm()
-
-    return render(request,'captcha/home.html',{'form':form})
 
 
 # LOGIN PAGE
