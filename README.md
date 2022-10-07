@@ -10,21 +10,22 @@ Developer: Krishan Gharu
 
 ## **Contents**
 
-* [About](#About)
-* [User Experience Planning](#User-Experience-Planning)
-  * [The Strategy Plane](#The-Strategy-Plane)
-    * [Mission Objectives - The What](#Mission-Objectives-The-What)
+* [About](#about)
+* [User Experience Design](#user-experience-design)
+  * [Strategy Plane](#strategy-plane)
+    * [Target Audience](#target-audience)
+    * [Mission Objectives](#mission-objectives)
     * [The Why](#The-Why)
     * [Ideas & Inspiration Mind Map:](#The-Inspiration-and-Ideas-Map)
     * [Demographic](#Demographic)
     * [Colour Palette Ideas](#Colour-Palette-Ideas)
     * [Content Strategy](#Content-Strategy)
     * [Typography](#Typography)
-  * [The Scope Plane](#The-Scope-Plane)
-    * [Functional Requirements](#Functional-Requirements)
-    * [Content Requirements](#Content-Requirements)
-    * [Interaction Design](#Interaction-Design) 
-    * [Scope of MVP](#Scope-of-MVP)
+  * [The Scope Plane](#the-scope-plane)
+    * [Functional Requirements](#functional-requirements)
+    * [Content Requirements](#content-requirements)
+    * [Interaction Design](#interaction-design) 
+    * [Scope of MVP](#scope-of-mvp)
   * [The Structure Plane](#The-Structure-Plane)
     * [Site Architecture](#Site-Architecture)
     * [Roles and Processes](#Roles-and-Processes)
@@ -75,14 +76,14 @@ I used the 5 Planes of UX to provide a conceptual framework.
 
 ## Strategy Plane:
 
-### Target Audience / Demographic:
+### Target Audience:
 
 - Target Audience: 
 `Users` Parents, Guardians and Carers.
 `Admin` Teachers.
 `Super Admim` School IT Department / School Office Admins.
 
-### Mission Objectives / The What:
+### Mission Objectives:
 
 - To develop an `mvp (minimum viable product)` that allows `Users` to book appointments with `Admin` Teachers for parents evening and other consultations.
 - The app must be simple, easy for parents to use and must be able to book an appointment in `less than three clicks`.
@@ -113,35 +114,103 @@ https://fonts.google.com/
 Montserrat was used due to it's warm style and being easy to read. The are qualities found in most school websites.
 ![image](/documentation/readme_folder/images/google_fonts.png)
 
+[Back to contents](#contents)
+
 ## Scope Plane:
 
 ### Functional Requirements:
 
 1. Problem: The `User` needs to have direct access to the appointment form to make an appointment.
-- Solution: Acces the form in less than three clicks.
+
+- Solution: Acces the form in `less than three clicks`.
 
 2. Problem: `Users` must not be allowed to see other `User` appointments order to protect their sensitive data.
-- Solution: Create an Admin Area so only Teachers can login and gain access.
+
+- Solution: Create an `Admin Area` so only Teachers can login and gain access.
 
 3. Problem: `Users` need to be notified that thier appointment is confirmed.
-- Solution: The `Admin` can accpect the appointment which then sends a confirmtion email to the `User`
+
+- Solution: The `Admin` can accpect the appointment which then `sends a confirmtion email` to the `User`
 
 4. Problem: If appointment is no longer needed then it need to be removed from the appointments list.
-- Solution: The `Admin` can delete appointment records from the Admin Area.
 
-5. Problem: Harmful bots and malicious attackers could use the appintment form to crash the site.
-- Solution: Implement a CAPTCHA to the form so human intervention is needed to submit the form.
-- CAPTCHA (Completely Automated Public Turing test to tell Computers and Humans Apart) is a type of security measure known as challenge-response authentication. CAPTCHA helps protect the site from spam and automated scipts by asking the `User` to complete a simple test that proves you are human and not a computer trying to break into a password protected account.
+- Solution: The `Admin` can `delete appointment records` from the Admin Area.
 
-A CAPTCHA test is made up of two simple parts: a randomly generated sequence of letters and/or numbers that appear as a distorted image, and a text box. To pass a the test and prove your human identity, simply type the characters you see in the image into the text box.
+5. Problem: The `Admin` accidentally click delete on the appointment.
 
-6. Problem: The Teacher 
+- Solution: `Defensive Programming` put in place to ask the `Admin` to confirm deletion of the appointment. 
+
+6. Problem: Harmful bots and malicious attackers could use the appintment form to crash the site.
+
+- Solution: Implement a `CAPTCHA` to the form so human intervention is needed to submit the form.
+  - CAPTCHA (Completely Automated Public Turing test to tell Computers and Humans Apart) is a type of security measure known as challenge-response authentication. CAPTCHA helps protect the site from spam and automated scipts by asking the `User` to complete a simple test that proves you are human and not a computer trying to break into a password protected account.
+
+  - A CAPTCHA test is made up of two simple parts: a randomly generated sequence of letters and/or numbers that appear as a distorted image, and a text box. To pass a the test and prove your human identity, simply type the characters you see in the image into the text box.
 
 
+### Content Requirements:
+
+- `Public` Homepage with hero text to explain what the app is for.
+- `Public` Booking form for the `User` to create the appointment.
+- `Public with Restrictions` Admin area to Teacher `Admin` to manage the appointments.
+- `Public` Login Page
+- `Private` Teacher `Admin` Register Page - Not public facing page. This will be a private link shared to Teachers.
+
+### Interaction Design:
+
+- All CTA (Call to Action) buttons will change colour to let the customers know that the buttons are clickable. 
+- The `User` and `Admin` are notified for all changes to appointments and data.
+- The `Admin` login state is reflected to the `Admin` on the front-end.
+- The `User` recieves an email confirmation when the appointment have been accepted by the `User`
+
+### Scope of MVP:
+Using the MoSCoW prioritisation method to outline the importance of each requirement and what needs to be delivered in the MVP.
+
+![image](/documentation/readme_folder/images/moscow_pp4.png)
+
+[Back to contents](#contents)
+
+## The Structure Plane:
+
+### Site Architecture
+
+### Roles and Processes
+
+- Permitted access based on `User` and Teacher `Admin` Role:
+
+| Page Name     | Boss  | Teacher    | Sales Manager | Receptionist | Parent | Potential Client |
+| ------------- | ------------- | ------------- | ---------- | ------------- | ------------- | ------------- |
+| home page                   | Y | Y | Y | Y | Y | Y |
+| login page                  | Y | Y | Y | Y | Y | Y |
+| registration page           | Y | Y | Y | Y | Y | Y |
+| logout page                 | Y | Y | Y | Y | Y | Y |
+| user's profile page         | Y | Y | Y | Y | Y | Y |
+| other user's profile page   | Y (all data + delete member functionality) | Y (all data except sales made by a sales manager and other teachers' classes) | Y (all data except teachers' classes and other sales managers' sales ) | Y (all data except teachers's classes and sales of the sales managers) | Y (only name, phone number and email) | Y (only name, phone number and email) |
+| edit profile page           | Y | Y | Y | Y | Y | Y |
+| delete member         | Y | N | N | N | N | N |
+| change password page        | Y | Y | Y | Y | Y | Y |
+| members page                | Y | Y | Y | Y | N | N |
+| new applications page       | Y | N | Y | N | N | N |
+| application detail page     | Y (plus assign role and delete application) | N | Y | N | N | N |
+| delete application page     | Y | N | N | N | N | N |
+| sales page                  | Y | N | Y (plus add a sale and edit or delete personal sales only) | N | N | N |
+| add sale page               | N | N | Y | N | N | N |
+| edit sale page              | N | N | Y | N | N | N |
+| delete sale page            | N | N | Y | N | N | N |
+| students page               | Y (plus add student button) | Y | Y (plus add student button) | Y | N | N |
+| student detail page         | Y (plus delete and edit functionality) | Y | Y (plus delete and edit functionality) | Y | Y (only their own children) | N |
+| add student page            | Y | N | Y | N | N | N |
+| edit student page           | Y | N | Y | N | N | N |
+| delete student page         | Y | N | Y | N | N | N |
+| schedule page               | Y | Y (plus view personal schedule functionality) | Y | Y (plus add lesson functionality) | Y | Y |
+| lesson page                 | Y | Y | Y | Y | Y (except view other students' profiles) | Y (except view students' profiles functionality) |
+| add lesson page             | N | N | N | Y | N | N |
+| edit lesson page            | N | N | N | Y | N | N |
+| delete lesson page          | N | N | N | Y | N | N |
+| teacher's personal schedule page | N | Y | N | N | N | N |
 
 
-
-
+[Back to contents](#contents)
 
 ## User Stories
 
@@ -220,69 +289,8 @@ A CAPTCHA test is made up of two simple parts: a randomly generated sequence of 
 
 ## Features
 
-Web application has the following pages:
-- home page
-- login page
-- registration page
-- logout page
-- profile page
-- edit profile page
-- change password page
-- delete member page
-- members page
-- new applications page
-- application detail page
-- delete application page
-- sales page
-- add sale page
-- edit sale page
-- delete sale page
-- students page
-- student detail page
-- add student page
-- edit student page
-- delete student page
-- schedule page
-- lesson page
-- add lesson page
-- edit lesson page
-- delete lesson page
-- teacher's personal schedule page
 
-### Access to pages according to the user role:
 
-| Page Name     | Boss  | Teacher    | Sales Manager | Receptionist | Parent | Potential Client |
-| ------------- | ------------- | ------------- | ---------- | ------------- | ------------- | ------------- |
-| home page                   | Y | Y | Y | Y | Y | Y |
-| login page                  | Y | Y | Y | Y | Y | Y |
-| registration page           | Y | Y | Y | Y | Y | Y |
-| logout page                 | Y | Y | Y | Y | Y | Y |
-| user's profile page         | Y | Y | Y | Y | Y | Y |
-| other user's profile page   | Y (all data + delete member functionality) | Y (all data except sales made by a sales manager and other teachers' classes) | Y (all data except teachers' classes and other sales managers' sales ) | Y (all data except teachers's classes and sales of the sales managers) | Y (only name, phone number and email) | Y (only name, phone number and email) |
-| edit profile page           | Y | Y | Y | Y | Y | Y |
-| delete member         | Y | N | N | N | N | N |
-| change password page        | Y | Y | Y | Y | Y | Y |
-| members page                | Y | Y | Y | Y | N | N |
-| new applications page       | Y | N | Y | N | N | N |
-| application detail page     | Y (plus assign role and delete application) | N | Y | N | N | N |
-| delete application page     | Y | N | N | N | N | N |
-| sales page                  | Y | N | Y (plus add a sale and edit or delete personal sales only) | N | N | N |
-| add sale page               | N | N | Y | N | N | N |
-| edit sale page              | N | N | Y | N | N | N |
-| delete sale page            | N | N | Y | N | N | N |
-| students page               | Y (plus add student button) | Y | Y (plus add student button) | Y | N | N |
-| student detail page         | Y (plus delete and edit functionality) | Y | Y (plus delete and edit functionality) | Y | Y (only their own children) | N |
-| add student page            | Y | N | Y | N | N | N |
-| edit student page           | Y | N | Y | N | N | N |
-| delete student page         | Y | N | Y | N | N | N |
-| schedule page               | Y | Y (plus view personal schedule functionality) | Y | Y (plus add lesson functionality) | Y | Y |
-| lesson page                 | Y | Y | Y | Y | Y (except view other students' profiles) | Y (except view students' profiles functionality) |
-| add lesson page             | N | N | N | Y | N | N |
-| edit lesson page            | N | N | N | Y | N | N |
-| delete lesson page          | N | N | N | Y | N | N |
-| teacher's personal schedule page | N | Y | N | N | N | N |
-
-- Each page has a navbar and a footer
 
 **Navbar**
 
