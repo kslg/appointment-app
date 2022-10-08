@@ -1,18 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block cta %}
-{% block messages %}
-{% if messages %}
-  <div class="alert alert-warning alert-dismissible fade show">
-    <div class="card-body">
-      {% for message in messages %}
-        <div class="card-title">{{message}} </div>
-      {% endfor %}
-    </div>
-  </div> 
-{% endif %}
-
-{% endblock %}
 {% block content %}
 <!-- Mask & flexbox options-->
 <div class="mask rgba-gradient d-flex justify-content-center align-items-center hero-img">
