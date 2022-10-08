@@ -174,6 +174,8 @@ Using the MoSCoW prioritisation method to outline the importance of each require
 
 ### Site Architecture
 
+![image](/documentation/readme_folder/images/site_structure.png)
+
 ### Roles and Processes
 
 - Permitted access based on `User` and Teacher `Admin` Role:
@@ -191,8 +193,16 @@ Using the MoSCoW prioritisation method to outline the importance of each require
 | delete appointments         | N | Y | Y |
 
 
-
 [Back to contents](#contents)
+
+## The Skeleton Plane:
+
+User Interface
+Manifestations of Data
+Progressive Disclosure
+Header and Footer
+Navigation
+CTA Buttons
 
 ## User Stories
 
