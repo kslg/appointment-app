@@ -733,74 +733,16 @@ NAVIGATION
   opacity:0.2;
 }
 
-/*############
-CONTACT
-##############*/
+/*########################
+  ALERT STYLING
+##########################*/
 
-.form-control {
-  box-shadow: none !important;
-  outline: none !important;
-  border: 2px solid #cecece;
-  height: 38px;
-}
-.form-control:hover ,.form-control:focus{
-  border-color: #97a0af;
+.alert-success {
+  margin: 0;
 }
 
-
-.error {
-  margin: 8px 0px;
-  display: none;
-  color: red;
-}
-#ajaxsuccess {
-  font-size: 16px;
-  width: 100%;
-  display: none;
-  clear: both;
-  margin: 8px 0px;
-}
-.con_sub_text {
-  margin: 20px 0px;
-  font-size: 15px;
-}
-
-.title-box .border,.btn-primary,.back-to-top,
-.logo i,.question-q-box,.social-circle li a:hover {
-  background-color: #f16000 !important;
-}
-.title-box .title-alt,.text-colored,.footer a:hover,
-.navbar-custom .navbar-nav li a:hover,
-.navbar-custom .navbar-nav li a:focus,
-.navbar-custom .navbar-nav li a:active,
-.navbar-custom .navbar-nav li.active a {
-  color: #f16000;
-}
-
-.btn-primary {
-  border: 1px solid #f16000 !important;
-}
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active,
-.btn-primary.active,
-.btn-primary.focus,
-.btn-primary:active,
-.btn-primary:focus,
-.btn-primary:hover,
-.open > .dropdown-toggle.btn-primary,
-.btn-primary.active.focus, .btn-primary.active:focus, 
-.btn-primary.active:hover, .btn-primary:active.focus, 
-.btn-primary:active:focus, .btn-primary:active:hover, 
-.open>.dropdown-toggle.btn-primary.focus, 
-.open>.dropdown-toggle.btn-primary:focus, 
-.open>.dropdown-toggle.btn-primary:hover {
-  background-color: #d85600 !important;
-  border: 1px solid #d85600 !important;
-}
-
-.btn-shadow.btn-primary {
-  box-shadow: 1px 5px 9px rgba(241, 96, 1, 0.32);
+.alert-warning {
+  margin: 0;
 }
 
 /*########################
