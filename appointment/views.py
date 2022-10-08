@@ -6,7 +6,7 @@ from django.views.generic import ListView
 from django.core.mail import EmailMessage, message, send_mail
 from django.conf import settings
 from django.contrib import messages
-from django.contrib.auth import login, authenticate  # login_request
+from django.contrib.auth import login, authenticate, logout  # login_request
 from django.contrib.auth.forms import AuthenticationForm  # login_request
 from .models import Appointment
 from .forms import AppointmentCreationForm
@@ -107,7 +107,7 @@ def login_request(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                messages.info(request, f"You are now logged in as {username}.")
+                # messages.info(request, f"You are now logged in as {username}.")
                 return redirect("manage")
             else:
                 messages.error(request, "Invalid username or password.")
@@ -116,3 +116,10 @@ def login_request(request):
     form = AuthenticationForm()
     return render(request=request, template_name="login.html",
                   context={"login_form": form})
+
+
+# LOG OUT MESSAGE
+def logout_view(request):
+    logout(request)
+    messages.error(request, "Invalid username or password.")
+    return HttpResponseRedirect(request.path)
