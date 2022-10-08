@@ -22,3 +22,7 @@ class AppointmentCreationForm(forms.ModelForm):
             'date': DateInput(),
         }
         exclude = ('accepted', 'accepted_date')
+
+
+class YourForm(forms.Form):
+    captcha = CaptchaField()

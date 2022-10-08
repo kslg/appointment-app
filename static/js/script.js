@@ -21,6 +21,7 @@ $(function() {
 
     $('#alert').removeClass('d-none');
   
+    // Auto close function for bootstrap alerts
     setTimeout(() => {
       $('.alert').alert('close');
     }, 3000);

@@ -14,6 +14,7 @@ from django.template import Context
 from django.template.loader import render_to_string, get_template
 import datetime
 from django.urls import reverse
+from captcha.fields import CaptchaField
 
 # Views Start Here
 
@@ -113,7 +114,6 @@ def login_request(request):
                 messages.error(request, "Invalid username or password.")
         else:
             messages.error(request, "Invalid username or password.")
-    form = AuthenticationForm()
     return render(request=request, template_name="login.html",
                   context={"login_form": form})
 
