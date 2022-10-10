@@ -2,15 +2,15 @@
 
 {% block content %}
 
-<div class="container-fluid px-1 py-5 mx-auto">
-  <div class="col-11 text-center mt-4 mb-4">
+<div class="container-fluid px-1 py-5 mx-auto manage-background">
+  <div class="col-12 text-center mt-4 mb-4">
       <h3>
         Manage appointments
       </h3>
   </div>
   <div class="row d-flex justify-content-center">
   {% for app in appointments %}
-  <div class="col-lg-4">
+  <div class="col-lg-3">
       <div class="card card-margin">
           <div class="card-header no-border">
             <p class="card-title">Parent: {{app.parent_name}}</p>
