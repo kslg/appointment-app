@@ -101,7 +101,11 @@ body, html {
 ##############*/
 
 .appointment-background {
-  background-color: #F6F0BC;
+  background-color: #5c724a;
+}
+
+.appointment-text h3{
+  color: #f5f5d5;
 }
 
 .appointmentcard input[type=submit] {
@@ -120,7 +124,7 @@ body, html {
   }
 
 .blue-text {
-    color: #00BCD4
+    color: #f5f5d5
 }
 
 .form-control-label {
@@ -197,6 +201,18 @@ textarea {
   margin-bottom: 1.875rem;
 }
 
+.manage-background {
+  background-color: #5c724a
+}
+
+.manage-background h3 {
+  color: #f5f5d5;
+}
+
+.manage-background.py-5 {
+  padding-bottom: 24rem!important;
+}
+
 .card {
   border: 0;
   box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
@@ -210,10 +226,11 @@ textarea {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #ffffff;
   background-clip: border-box;
   border: 1px solid #e6e4e9;
   border-radius: 8px;
+  color: #354a2f;
+  background-color: #f5f5d5;
 }
 
 .card .card-header.no-border {
@@ -229,6 +246,17 @@ textarea {
 }
 .card-header:first-child {
   border-radius: calc(8px - 1px) calc(8px - 1px) 0 0;
+}
+
+.modal-content {
+  background-color: #f5f5d5;
+  color: #354a2f;
+}
+
+.modal-footer .btn-primary {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: #fff;
 }
 
 .widget-49 .widget-49-title-wrapper {
@@ -509,17 +537,17 @@ text-transform: uppercase;
 .page-link {
   position: relative;
   display: block;
-  color: #D85600 !important;
+  color: #354a2f !important;
   text-decoration: none;
-  background-color: #fff;
-  border: 1px solid #D85600 !important
+  background-color: #f5f5d5;
+  border: 1px solid #354a2f !important
 }
 
 .page-link:hover {
   z-index: 2;
-  color: #fff !important;
-  background-color: #D85600;
-  border-color: #024dbc
+  color: #f5f5d5 !important;
+  background-color: #354a2f;
+  border-color: #354a2f
 }
 
 .page-link:focus {
