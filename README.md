@@ -74,16 +74,16 @@ Repository: [GitHub Repo](http link)
 I used the 5 Planes of UX to provide a conceptual framework.
 
 
-## Strategy Plane:
+# Strategy Plane:
 
-### Target Audience:
+## Target Audience:
 
 - Target Audience: 
 `Users` Parents, Guardians and Carers.
 `Admin` Teachers.
 `Super Admim` School IT Department / School Office Admins.
 
-### Mission Objectives:
+## Mission Objectives:
 
 - To develop an `mvp (minimum viable product)` that allows `Users` to book appointments with `Admin` Teachers for parents evening and other consultations.
 - The app must be simple, easy for parents to use and must be able to book an appointment in `less than three clicks`.
@@ -93,32 +93,32 @@ I used the 5 Planes of UX to provide a conceptual framework.
 
 - The school was using paper forms which becomes costly and is environmentally unfriendly.
 
-### Ideas & Inspiration Mind Map
+## Ideas & Inspiration Mind Map
 ![image](/documentation/readme_folder/images/mindmap_1.png)
 ![image](/documentation/readme_folder/images/mindmap2.png)
 
 
 
-### Colour Palette Ideas:
+## Colour Palette Ideas:
 ![image](/documentation/readme_folder/images/color_pallette_ideas.png)
 
-### Content Strategy:
+## Content Strategy:
 
 - Main functionality is to book an appointment with the child's teacher.
 - The Teacher has thier own admin area to view appointments and accept the appointment.
 - The booking form will be easy to get to via the top navigation header or from the CTA button on the homepage.
 
 
-### Typography:
+## Typography:
 https://fonts.google.com/
 Montserrat was used due to it's warm style and being easy to read. The are qualities found in most school websites.
 ![image](/documentation/readme_folder/images/google_fonts.png)
 
 [Back to contents](#contents)
 
-## Scope Plane:
+# Scope Plane:
 
-### Functional Requirements:
+## Functional Requirements:
 
 1. Problem: The `User` needs to have direct access to the appointment form to make an appointment.
 
@@ -148,7 +148,7 @@ Montserrat was used due to it's warm style and being easy to read. The are quali
   - A CAPTCHA test is made up of two simple parts: a randomly generated sequence of letters and/or numbers that appear as a distorted image, and a text box. To pass a the test and prove your human identity, simply type the characters you see in the image into the text box.
 
 
-### Content Requirements:
+## Content Requirements:
 
 - `Public` Homepage with hero text to explain what the app is for.
 - `Public` Booking form for the `User` to create the appointment.
@@ -156,27 +156,27 @@ Montserrat was used due to it's warm style and being easy to read. The are quali
 - `Public` Login Page
 - `Private` Teacher `Admin` Register Page - Not public facing page. This will be a private link shared to Teachers.
 
-### Interaction Design:
+## Interaction Design:
 
 - All CTA (Call to Action) buttons will change colour to let the customers know that the buttons are clickable. 
 - The `User` and `Admin` are notified for all changes to appointments and data.
 - The `Admin` login state is reflected to the `Admin` on the front-end.
 - The `User` recieves an email confirmation when the appointment have been accepted by the `User`
 
-### Scope of MVP:
+## Scope of MVP:
 Using the MoSCoW prioritisation method to outline the importance of each requirement and what needs to be delivered in the MVP.
 
 ![image](/documentation/readme_folder/images/moscow_pp4.png)
 
 [Back to contents](#contents)
 
-## The Structure Plane:
+# The Structure Plane:
 
-### Site Architecture
+## Site Architecture
 
 ![image](/documentation/readme_folder/images/site_structure.png)
 
-### Roles and Processes
+## Roles and Processes
 
 - Permitted access based on `User` and Teacher `Admin` Role:
 
@@ -195,10 +195,57 @@ Using the MoSCoW prioritisation method to outline the importance of each require
 
 [Back to contents](#contents)
 
-## The Skeleton Plane:
+# The Skeleton Plane:
 
-User Interface
-Manifestations of Data
+## Header:
+- Cream background.
+- Dark Green Text.
+- Hover States: Underline style.
+
+  - Example:
+  <br>
+![image](/documentation/readme_folder/images/header.png)
+
+## Footer:
+- Brown background.
+- Dark Green text.
+- Crean Icon.
+
+  - Example:
+  <br>
+![image](/documentation/readme_folder/images/footer.png)
+
+
+# Manifestations of Data
+
+## Data at rest
+
+- Appointment Data in the Admin
+<br>
+![image](/documentation/readme_folder/images/data_at_rest_appointments.png)
+<br>
+- Teacher in the Admin
+<br>
+![image](/documentation/readme_folder/images/data_at_rest_teachers.png)
+
+## Data in motion
+
+1. Data is `captured` from the appointment form and `stored` in the database.
+<br>
+![image](/documentation/readme_folder/images/data_in_motion_appointment_form.png)
+![image](/documentation/readme_folder/images/data_in_motion_admin.png)
+<br>
+
+2. An `email` is sent to the `User` when a appointment is accepted by the `Admin`
+<br>
+![image](/documentation/readme_folder/images/data_in_motion_email.png)
+
+## Data in use
+
+Appointment Data is `accessed` when the Teacher `Admin` logs into the Teacher Admin area.
+
+
+
 Progressive Disclosure
 Header and Footer
 Navigation
