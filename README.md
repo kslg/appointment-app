@@ -1,4 +1,4 @@
-<h1 align="center">Fairchild School Parent-teacher Booking App </h1>
+<h1 align="center">Fairchild School Parent-teacher Booking App</h1>
 
 Developer: Krishan Gharu
 
@@ -37,11 +37,14 @@ Developer: Krishan Gharu
     * [Navigation](#Navigation)
     * [CTA Buttons](#CTA-Buttons)
   * [The Surface Plane](#The-Surface-Plane)
-  * [User Stories](#User-Stories)
-    * [Parest User Journeys](#)
-    * [Teacher User Journeys](#)
-    * [Super Admin](#)
-    * [Non-Related Visitor](#)
+  * [User Journeys](#)
+  * [Teacher Admin Journeys](#)
+* [Agile Project Management](#agile-project-management)
+  * [User Stories - User](#user-stories---user)
+  * [User Stories - Teacher Admin](#user-stories---teacher-admin)
+  * [Tasks](#tasks)
+  * [Bugs and Issues](#bugs-and-issues)
+  * [Non-Related Visitor](#)
 * [Technologies used](#Technologies-used)
 * [Libraries used](#)
 * [App Features and Highlights](#Features)
@@ -93,10 +96,9 @@ I used the 5 Planes of UX to provide a conceptual framework.
 
 - The school was using paper forms which becomes costly and is environmentally unfriendly.
 
-## Ideas & Inspiration Mind Map
+## Ideas and Inspiration Mind Map
 ![image](/documentation/readme_folder/images/mindmap_1.png)
 ![image](/documentation/readme_folder/images/mindmap2.png)
-
 
 
 ## Colour Palette Ideas:
@@ -147,6 +149,7 @@ Montserrat was used due to it's warm style and being easy to read. The are quali
 
   - A CAPTCHA test is made up of two simple parts: a randomly generated sequence of letters and/or numbers that appear as a distorted image, and a text box. To pass a the test and prove your human identity, simply type the characters you see in the image into the text box.
 
+[Back to contents](#contents)
 
 ## Content Requirements:
 
@@ -156,12 +159,17 @@ Montserrat was used due to it's warm style and being easy to read. The are quali
 - `Public` Login Page
 - `Private` Teacher `Admin` Register Page - Not public facing page. This will be a private link shared to Teachers.
 
+[Back to contents](#contents)
+
 ## Interaction Design:
 
 - All CTA (Call to Action) buttons will change colour to let the customers know that the buttons are clickable. 
 - The `User` and `Admin` are notified for all changes to appointments and data.
 - The `Admin` login state is reflected to the `Admin` on the front-end.
-- The `User` recieves an email confirmation when the appointment have been accepted by the `User`
+- The `User` recieves an email confirmation when the appointment have been accepted by the `User`.
+- Both thr `Admin` and `User` and presents with alert messages when they trigger a certain action. i.e create an appointment, etc.
+
+[Back to contents](#contents)
 
 ## Scope of MVP:
 Using the MoSCoW prioritisation method to outline the importance of each requirement and what needs to be delivered in the MVP.
@@ -175,6 +183,8 @@ Using the MoSCoW prioritisation method to outline the importance of each require
 ## Site Architecture
 
 ![image](/documentation/readme_folder/images/site_structure.png)
+
+[Back to contents](#contents)
 
 ## Roles and Processes
 
@@ -216,6 +226,7 @@ Using the MoSCoW prioritisation method to outline the importance of each require
   <br>
 ![image](/documentation/readme_folder/images/footer.png)
 
+[Back to contents](#contents)
 
 ## Colour Palette:
 
@@ -253,10 +264,74 @@ Appointment Data is `accessed` when the Teacher `Admin` logs into the Teacher Ad
 ![image](/documentation/readme_folder/images/data_in_use_manage_appointment.png)
 
 
-# The Skeleton Plane:
+# The Surface Plane:
+
+---
+
+# Features
 
 
-# User Stories, Tasks, Bugs & Issues
+## **Navbar**
+
+![Navbar](/documentation/readme_folder/images/navbar_desktop.png)
+![Navbar](/documentation/readme_folder/images/navbar_mobile.png)
+
+Navbar links:
+- Home Page (School Logo) 
+- Make Appointment
+- Teacher Admin
+
+To satisfy an MPV and keeping the Navbar simple allows Users to become familiar with the app more quickly.
+
+## **Home page**
+
+## **Make Appointment Page**
+
+## **Login page**
+
+## **Register page**
+
+## **CRUD Functionalily**
+
+## **Defensive Programming with Bootstrap Modal**
+
+## **User Athentication**
+
+## **Django Simple CAPTCHA on Make Appointment Page**
+
+## **Email Confirmation**
+
+## **Bootstrap Theme**
+
+## **Bootstrap Alerts**
+
+## **Application Delete Page**
+
+## **Time Slot selector**
+
+```Python
+  # Time slot options
+  TIME_SLOTS = (
+      ('0', '15:30 - 15:45'),
+      ('1', '15:45 - 16:00'),
+      ('2', '16:00 - 16:15'),
+      ('3', '16:15 - 16:30'),
+      ('4', '16:30 - 16:45'),
+      ('5', '16:45 - 17:00'),
+  )
+```
+
+## **Teacher Dropdown Selector**
+
+## **Date Picker on Make Appointment Page**
+
+
+
+[Back to contents](#contents)
+
+---
+
+# Agile Project Management
 
 ## **User Stories - User**
 
@@ -311,7 +386,7 @@ Appointment Data is `accessed` when the Teacher `Admin` logs into the Teacher Ad
 
 ---
 
-## Technologies used
+## **Technologies used**
 
 - ### Languages:
     
@@ -323,9 +398,9 @@ Appointment Data is `accessed` when the Teacher `Admin` logs into the Teacher Ad
 - ### Frameworks and libraries:
 
     + [Django](https://www.djangoproject.com/): a high-level Python web framework for the app.
-    + [Simple Captcha]():
-    + [AllAuth]():
-    + [CrispyForms]():
+    + [Django Simple Captcha](https://pypi.org/project/django-simple-captcha/): is a simple captcha form to prevent automated bot attacks.
+    + [Django AllAuth](https://django-allauth.readthedocs.io/en/latest/overview.html): is an integrated set of Django applications dealing with account authentication, registration and management.
+    + [CrispyForms](): is an optimised way of rendering forms on the front-end in a very elegant and `DRY` way. 
 
 - ### Databases:
 
@@ -333,91 +408,20 @@ Appointment Data is `accessed` when the Teacher `Admin` logs into the Teacher Ad
 
 - ### Other tools:
 
-    + [Git](https://git-scm.com/): the version control system used to manage the code.
-    + [Pip3](https://pypi.org/project/pip/): the package manager used to install the dependencies.
-    + [Gunicorn](https://gunicorn.org/): the webserver used to run the website.
-    + [Spycopg2](https://www.python.org/dev/peps/pep-0249/): the database driver used to connect to the database.
-    + [Django-allauth](https://django-allauth.readthedocs.io/en/latest/): the authentication library used to create the user accounts.
-    + [Django-crispy-forms](https://django-cryptography.readthedocs.io/en/latest/): was used to control the rendering behavior of Django forms.
-    + [Heroku](https://dashboard.heroku.com/): the hosting service used to host the website.
-    + [GitHub](https://github.com/): used to host the website's source code.
-    + [VSCode](https://code.visualstudio.com/): the IDE used to develop the website.
-    + [Chrome DevTools](https://developer.chrome.com/docs/devtools/open/): was used to debug the website.
-    + [Font Awesome](https://fontawesome.com/): was used to create the icons used in the website.
-    + [Draw.io](https://www.lucidchart.com/) was used to make a flowchart for the README file.
-    + [W3C Validator](https://validator.w3.org/): was used to validate HTML5 code for the website.
-    + [W3C CSS validator](https://jigsaw.w3.org/css-validator/): was used to validate CSS code for the website.
-    + [pycodestyle 2.9.1](https://pypi.org/project/pycodestyle/): was used to validate Python code for the website.
+    + [Github](https://github.com/): hosting service for software development and version control using Git.
+    + [Pip3](https://pypi.org/project/pip/): is the package manager to intstall Python modules and libraries.
+    + [Gunicorn](https://docs.djangoproject.com/en/4.1/howto/deployment/wsgi/gunicorn/): "Green Unicorn" is a Python Web Server Gateway to translate HTTP Rquests for Python to understand.
+    + [Spycopg2](https://pypi.org/project/psycopg2/): PostgreSQL database adapter so I can manage the Database in Python. 
+    + [Heroku](https://dashboard.heroku.com/): the hosting service to host the app.
+    + [VSCode](https://code.visualstudio.com/): the IDE used to program the app.
+    + [Chrome DevTools](https://developer.chrome.com/docs/devtools/open/): used to identify any errors when being rendered in the browser.
+    + [Font Awesome](https://fontawesome.com/): used to source social icons to be used on the app.
+    + [Draw.io](https://www.lucidchart.com/) used to create the Database schema.
+    + [W3C Validator](https://validator.w3.org/): used to validate HTML5 code.
+    + [W3C CSS validator](https://jigsaw.w3.org/css-validator/): used to validate CSS code.
+    + [pycodestyle 2.9.1](https://pypi.org/project/pycodestyle/): was used to validate Python code.
 
 [Back to contents](#contents)
-
----
-
-## Features
-
-
-**Navbar**
-
-![Navbar]()
-
-Navbar has the following links:
-- home page
-- button "get started", which leads to the registration page and login page
-- ![Get Started button](documentation/features/navbar/get_started_button.png)
-- It also has a logo of the school
-- ![Logo](documentation/features/navbar/main_logo.png)
-
-The simplistic design of the navbar is based on the decision to make the use of the webapp easy for the user.
-
-
-**Home page**
-
-**Make Appointment Page**
-
-**Login page**
-
-**Register page**
-
-**CRUD Functionalily**
-
-**Defensive Programming with Bootstrap Modal**
-
-**User Athentication**
-
-**Django Simple CAPTCHA on Make Appointment Page**
-
-**Email Confirmation**
-
-**Bootstrap Theme**
-
-**Bootstrap Alerts**
-
-**Application Delete Page**
-
-**Time Slot selector**
-
-```Python
-  # Time slot options
-  TIME_SLOTS = (
-      ('0', '15:30 - 15:45'),
-      ('1', '15:45 - 16:00'),
-      ('2', '16:00 - 16:15'),
-      ('3', '16:15 - 16:30'),
-      ('4', '16:30 - 16:45'),
-      ('5', '16:45 - 17:00'),
-  )
-```
-
-**Teacher Dropdown Selector**
-
-**Date Picker on Make Appointment Page**
-
-
-
-[Back to contents](#contents)
-
----
-
 
 ---
 
@@ -588,7 +592,6 @@ Click "View build logs" to see the progress of the deployment.
 - [Postgresql](https://www.postgresql.org/): for providing a free database.
 - [Favicon Generator. For real.](https://realfavicongenerator.net/): for providing a free platform to generate favicons.
 
-*All names are fictional (the majority of the names were taken from "The Simpsons" and "Rick and Morty" cartoons), and any resemblance to actual events or locales or persons, living or dead, is entirely coincidental.*
 
 [Back to contents](#contents)
 ---
