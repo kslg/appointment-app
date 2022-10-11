@@ -178,9 +178,9 @@ Using the MoSCoW prioritisation method to outline the importance of each require
 
 ## Roles and Processes
 
-- Permitted access based on `User` and Teacher `Admin` Role:
+- Permitted access based on `User`, Teacher `Admin` and `Super Admin` Role:
 
-| Page Name | User | Admin | Super User |
+| Page Name | User | Admin | Super Admin |
 | ------------- | ------------- | ------------- | ---------- |
 | home page                   | Y | Y | Y |
 | login page                  | N | Y | Y |
@@ -191,6 +191,7 @@ Using the MoSCoW prioritisation method to outline the importance of each require
 | view appointments           | N | Y | Y |
 | update appointments         | N | Y | Y |
 | delete appointments         | N | Y | Y |
+| backend django admin        | N | N | Y |
 
 
 [Back to contents](#contents)
@@ -255,23 +256,20 @@ Appointment Data is `accessed` when the Teacher `Admin` logs into the Teacher Ad
 # The Skeleton Plane:
 
 
-# User Stories
+# User Stories, Tasks, Bugs & Issues
 
-## **User**
+## **User Stories - User**
 
 | Issue ID    | User Story |
 |-------------|-------------------------------------|
 |[#1](https://github.com/kslg/appointment-app/issues/1)| User Story: Install Bootstrap 4 Theme
-|[#2](https://github.com/kslg/appointment-app/issues/24)| User Story: Django Simple CAPTCHA on Login Page
+|[#2](https://github.com/kslg/appointment-app/issues/24)| User Story: Django Simple CAPTCHA
 |[#3](https://github.com/kslg/appointment-app/issues/6)| User Story: CRUD - CREATE Functionality
-|[#2](story link)| 
-|[#2](story link)| statement  
-|[#2](story link)| statement  
-|[#2](story link)| statement  
-|[#2](story link)| statement  
-|[#2](story link)| statement  
+|[#4](https://github.com/kslg/appointment-app/issues/9)| User Story: Add Bootstrap Alert Messages  
+|[#5](https://github.com/kslg/appointment-app/issues/10)| User Story: Role Based Login and Registration Functionality
+|[#6](https://github.com/kslg/appointment-app/issues/11)| User Story: Restrict User Access to Teacher Admin Area
 
-## **Teacher Admin**
+## **User Stories - Teacher Admin**
 
 | Issue ID    | User Story |
 |-------------|-------------------------------------|
@@ -280,8 +278,32 @@ Appointment Data is `accessed` when the Teacher `Admin` logs into the Teacher Ad
 |[#3](https://github.com/kslg/appointment-app/issues/7)| User Story: CRUD - UPDATE Functionality
 |[#4](https://github.com/kslg/appointment-app/issues/8)| User Story: CRUD - DELETE Functionality
 |[#5](https://github.com/kslg/appointment-app/issues/14)| User Story: Send Email to Parent when appointment is Approved. django.core.mail module.
-|[#6](story link)| statement  
-|[#7](story link)| statement  
+|[#6](https://github.com/kslg/appointment-app/issues/9)| User Story: Add Bootstrap Alert Messages 
+|[#7](https://github.com/kslg/appointment-app/issues/22)| User Story: Delete Appointment - Defensive Programming with Bootstrap Modal
+|[#8](https://github.com/kslg/appointment-app/issues/10)| User Story: Role Based Login and Registration Functionality
+
+## **Tasks**
+
+| Issue ID    | Tasks |
+|-------------|-------------------------------------|
+|[#1](https://github.com/kslg/appointment-app/issues/4)| Task: Create Appointment Model
+|[#2](https://github.com/kslg/appointment-app/issues/17)| Task: Update Login, Signup and Log out pages with Bootstrap and Crispy forms.  
+|[#3](https://github.com/kslg/appointment-app/issues/3)| Task: Install Django and start up libraries
+
+## **Bugs and Issues**
+
+| Issue ID | Bugs / Issues |
+|----------|--------------------------------------------------------------------------|
+|[#1](https://github.com/kslg/appointment-app/issues/25)| Issue: Trying to set up email sending via gmail
+|[#2](https://github.com/kslg/appointment-app/issues/26)| Issue: Seeing this error when I click the delete button on the appointment
+|[#3](https://github.com/kslg/appointment-app/issues/27)| Issue: I cannot get the appointment to delete from the pop up modal
+|[#4](https://github.com/kslg/appointment-app/issues/28)| Issue: CAPTCHA Alert not showing as Warning Alert
+|[#5](https://github.com/kslg/appointment-app/issues/29)| Issue: Success Alert Message not showing when admin logs out
+|[#6](https://github.com/kslg/appointment-app/issues/13)| BUG: Styling on Manage Appointment Cards
+|[#7](https://github.com/kslg/appointment-app/issues/19)| BUG: Fix padding issue on Account pages (Login, Sign out)
+|[#8](https://github.com/kslg/appointment-app/issues/12)| BUG: Mobile View - Burger Menu does not show Nav Links
+|[#9](https://github.com/kslg/appointment-app/issues/18)| BUG: Fix Bootstrap errors seen in the browser console
+|[#10](https://github.com/kslg/appointment-app/issues/16)| BUG: Sign Out message showing on appointment page. Needs to show on redirect page.
 
 
 
@@ -293,21 +315,21 @@ Appointment Data is `accessed` when the Teacher `Admin` logs into the Teacher Ad
 
 - ### Languages:
     
-    + [Python 3.8.5](https://www.python.org/downloads/release/python-385/): the primary language used to develop the server-side of the website.
-    + [JS](https://www.javascript.com/): the primary language used to develop interactive components of the website.
-    + [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML): the markup language used to create the website.
-    + [CSS](https://developer.mozilla.org/en-US/docs/Web/css): the styling language used to style the website.
+    + [Python 3.8.5](https://www.python.org/downloads/release/python-385/): is the main language used to build the back-end.
+    + [JS](https://www.javascript.com/): for the CAPTCHA Refesh function and to handle the timeout for bootstrap alerts.
+    + [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML): is markup language used to build the front-end templates.
+    + [CSS](https://developer.mozilla.org/en-US/docs/Web/css): is styling language used adjust layout and front-end styles.
 
 - ### Frameworks and libraries:
 
-    + [Django](https://www.djangoproject.com/): python framework used to create all the logic.
-    + [jQuery](https://jquery.com/): was used to control click events and sending AJAX requests.
-    + [jQuery User Interface](https://jqueryui.com/) was used to create interactive elements.
+    + [Django](https://www.djangoproject.com/): a high-level Python web framework for the app.
+    + [Simple Captcha]():
+    + [AllAuth]():
+    + [CrispyForms]():
 
 - ### Databases:
 
-    + [SQLite](https://www.sqlite.org/): was used as a development database.
-    + [PostgreSQL](https://www.postgresql.org/): the database used to store all the data.
+    + [PostgreSQL](https://www.postgresql.org/): database to store all data.
 
 - ### Other tools:
 
@@ -358,7 +380,7 @@ The simplistic design of the navbar is based on the decision to make the use of 
 
 **CRUD Functionalily**
 
-**Defensive Programming**
+**Defensive Programming with Bootstrap Modal**
 
 **User Athentication**
 

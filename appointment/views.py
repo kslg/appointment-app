@@ -94,7 +94,7 @@ def delete_appointment(request, appointment_id):
 
 
 # AJAX
-def load_classes(request):
+def load_teacher(request):
     teacher_id = request.GET.get('teacher_id')
 
 
