@@ -257,16 +257,32 @@ Appointment Data is `accessed` when the Teacher `Admin` logs into the Teacher Ad
 
 # User Stories
 
-
-
 ## **User**
 
 | Issue ID    | User Story |
 |-------------|-------------------------------------|
-|[#1](https://github.com/users/kslg/projects/3/views/1)| As a **User** and **Admin** I want **to see a responsive design that can be used to adapt screen sizes** So that **I have a consistent user experience no matter where and how I use the app.**
+|[#1](https://github.com/kslg/appointment-app/issues/1)| User Story: Install Bootstrap 4 Theme
+|[#2](https://github.com/kslg/appointment-app/issues/24)| User Story: Django Simple CAPTCHA on Login Page
+|[#3](https://github.com/kslg/appointment-app/issues/6)| User Story: CRUD - CREATE Functionality
+|[#2](story link)| 
+|[#2](story link)| statement  
+|[#2](story link)| statement  
+|[#2](story link)| statement  
+|[#2](story link)| statement  
 |[#2](story link)| statement  
 
-### **Admin**
+## **Teacher Admin**
+
+| Issue ID    | User Story |
+|-------------|-------------------------------------|
+|[#1](https://github.com/kslg/appointment-app/issues/23)| User Story: Sign Out Success Message
+|[#2](https://github.com/kslg/appointment-app/issues/5)| User Story: CRUD - READ Functionality
+|[#3](https://github.com/kslg/appointment-app/issues/7)| User Story: CRUD - UPDATE Functionality
+|[#4](https://github.com/kslg/appointment-app/issues/8)| User Story: CRUD - DELETE Functionality
+|[#5](https://github.com/kslg/appointment-app/issues/14)| User Story: Send Email to Parent when appointment is Approved. django.core.mail module.
+|[#6](story link)| statement  
+|[#7](story link)| statement  
+
 
 
 [Back to contents](#contents)
@@ -341,6 +357,8 @@ The simplistic design of the navbar is based on the decision to make the use of 
 **Register page**
 
 **CRUD Functionalily**
+
+**Defensive Programming**
 
 **User Athentication**
 
