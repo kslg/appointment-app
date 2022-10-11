@@ -57,14 +57,14 @@ body{
   border-color:#5c724a;
 }
 
-.homepage-content h2 {
-  color: #354a2f;
-}
-
 .btn-light:hover {
   background-color:#f5f5d5;
   color:#5c724a;
   border-color:#f5f5d5;
+}
+
+.homepage-content h2 {
+  color: #354a2f;
 }
 
 /*############
@@ -761,7 +761,7 @@ text-transform: uppercase;
 }
 
 /*########################
-  ALERT STYLING
+  ALERT MESSAGES STYLING
 ##########################*/
 
 .alert-success {
@@ -770,6 +770,33 @@ text-transform: uppercase;
 
 .alert-warning {
   margin: 0;
+}
+
+/*#################
+  SIGNUP.HTML
+###################*/
+
+.signup-card.card {
+  margin-top: 1rem;
+}
+
+.signup-card .btn-primary {
+  background-color:#5c724a;
+  color:#f5f5d5;
+  border-color:#5c724a;
+}
+
+.signup-card .btn-primary:hover {
+  background-color:#f5f5d5;
+  color:#5c724a;
+  border-color:#5c724a;;
+}
+
+.signup-background.container-fluid {
+  background-color: #5c724a;
+  height: 52rem;
+  margin-top: -1rem;
+  padding-top: 3rem;
 }
 
 
@@ -959,7 +986,7 @@ text-transform: uppercase;
 
 @media (min-width:1280px) {
   .homepage-content.card{
-    height: 133px;
+    height: 163px;
   }
 }
 
