@@ -557,7 +557,7 @@ text-transform: uppercase;
 }
 
 /*###########
-NAVIGATION
+  NAVIGATION
 ############*/
 
 .nav-link:hover {
@@ -568,7 +568,6 @@ NAVIGATION
 }
 
 .nav-link{
-  text-decoration: underline;
   font-weight: 400;
   color: #354a2f;
   font-size: large;
