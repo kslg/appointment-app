@@ -41,10 +41,7 @@
                   {% if app.accepted == False %}
                   <form method="POST" action="{% url 'manage' %}">
                     {% csrf_token %}
-                    <div class="form-group">
-                        <!-- <input type="date" name="date" class="form-control mb-2" 
-                            placeholder="dd-mm-yyyy" value=""
-                            min="1997-01-01" max="2030-12-31"> -->
+                    <div class="form-group manage-cards">
                         <input hidden="true" name="appointment-id" value="{{app.id}}">
                         <input class="btn-block btn-primary form-control" type="submit" value="Accept">
                     </div>
