@@ -110,8 +110,14 @@ body, html {
 
 .appointmentcard input[type=submit] {
   background-color: #75773C;
-  color: white;
+  color: #f5f5d5;
   border-color: #535040;
+}
+
+.appointmentcard input[type=submit]:hover {
+  background-color: #f5f5d5;
+  color: #75773C; 
+  border-color: #75773C;
 }
 
 .appointmentcard {
@@ -211,6 +217,18 @@ textarea {
 
 .manage-background.py-5 {
   padding-bottom: 24rem!important;
+}
+
+.manage-cards .btn-primary {
+  background-color:#5c724a;
+  color: #f5f5d5;
+  border-color: #5c724a 
+}
+
+.manage-cards .btn-primary:hover {
+  background-color: #f5f5d5;
+  border-color: #5c724a;
+  color: #354a2f;
 }
 
 .card {
@@ -773,12 +791,58 @@ text-transform: uppercase;
 }
 
 /*#################
-  SIGNUP.HTML
+  LOGIN.HTML
 ###################*/
 
-.signup-card.card {
+.login-card.card {
   margin-top: 1rem;
 }
+
+.login-card .btn-primary {
+  background-color:#5c724a;
+  color:#f5f5d5;
+  border-color:#5c724a;
+}
+
+.login-card .btn-primary:hover {
+  background-color:#f5f5d5;
+  color:#5c724a;
+  border-color:#5c724a;;
+}
+
+.login-background.container-fluid {
+  background-color: #5c724a;
+  height: 52rem;
+  margin-top: -1rem;
+  padding-top: 3rem;
+}
+
+/*#################
+  LOGOUT.HTML
+###################*/
+
+.logout-card .btn-primary {
+  background-color:#5c724a;
+  color:#f5f5d5;
+  border-color:#5c724a;
+}
+
+.logout-card .btn-primary:hover {
+  background-color:#f5f5d5;
+  color:#5c724a;
+  border-color:#5c724a;;
+}
+
+.logout-background.container-fluid {
+  background-color: #5c724a;
+  height: 52rem;
+  margin-top: -1rem;
+  padding-top: 3rem;
+}
+
+/*#################
+  SIGNUP.HTML
+###################*/
 
 .signup-card .btn-primary {
   background-color:#5c724a;
@@ -798,7 +862,6 @@ text-transform: uppercase;
   margin-top: -1rem;
   padding-top: 3rem;
 }
-
 
 /*########################
   RESPONSIVE TABLET VIEW
