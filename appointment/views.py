@@ -6,10 +6,10 @@ from django.views.generic import ListView
 from django.core.mail import EmailMessage, message, send_mail
 from django.conf import settings
 from django.contrib import messages
-from django.contrib.auth import login, authenticate, logout  # login_request
-from django.contrib.auth.forms import AuthenticationForm  # login_request
+from django.contrib.auth import login, authenticate, logout
+from django.contrib.auth.forms import AuthenticationForm
 from .models import Appointment
-from .forms import AppointmentCreationForm
+from .forms import AppointmentCreationForm, NewUserForm
 from django.template import Context
 from django.template.loader import render_to_string, get_template
 import datetime
@@ -123,3 +123,19 @@ def logout_view(request):
     logout(request)
     messages.error(request, "Invalid username or password.")
     return HttpResponseRedirect(request.path)
+
+
+# ADMIN SIGN UP
+def register_request(request):
+    if request.method == "POST":
+        form = NewUserForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            messages.success(request, "Registration successful.")
+            return redirect("manage")
+        messages.error(request, "Unsuccessful registration. Invalid\
+                       information.")
+    form = NewUserForm()
+    return render(request=request, template_name="signup.html",
+                  context={"register_form": form})
