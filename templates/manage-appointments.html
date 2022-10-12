@@ -42,23 +42,23 @@
                   <form method="POST" action="{% url 'manage' %}">
                     {% csrf_token %}
                     <div class="form-group manage-cards">
-                        <input hidden="true" name="appointment-id" value="{{app.id}}">
+                        <input class="manage-id" name="appointment-id" value="{{app.id}}">
                         <input class="btn-block btn form-control" type="submit" value="Accept">
                     </div>
                   </form>
                   {% else %}
                   <div class="widget-49-meeting-points">
-                    <span class="badge badge-success"><h6>Appointment Confirmed</h6></span>
+                    <span class="badge badge-success">Appointment Confirmed</span>
                     <div><br></div>
                   </div>
                   {% endif %}
                   <a class="btn btn-danger" role="button" data-toggle="modal" data-target="#modal-{{ app.id }}">Delete</a>
                   <!-- Delete Modal -->
-                  <div id="modal-{{ app.id }}" class="modal fade" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                  <div id="modal-{{ app.id }}" class="modal fade" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-hidden="true">
                     <div class="modal-dialog">
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h5 class="modal-title" id="staticBackdropLabel">Delete Appointment?</h5>
+                          <h5 class="modal-title">Delete Appointment?</h5>
                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                           </button>
