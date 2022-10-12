@@ -43,7 +43,7 @@
                     {% csrf_token %}
                     <div class="form-group manage-cards">
                         <input hidden="true" name="appointment-id" value="{{app.id}}">
-                        <input class="btn-block btn-primary form-control" type="submit" value="Accept">
+                        <input class="btn-block btn form-control" type="submit" value="Accept">
                     </div>
                   </form>
                   {% else %}
