@@ -26,7 +26,11 @@ body{
 ##############*/
 
 .hero-img {
-  background-image: url("../images/background-image.jpg");
+  background-image: url("/static/images/background-image.jpg");
+  height: 90%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .mb-5 {
@@ -83,13 +87,6 @@ body{
 
 body, html {
   height: 100%;
-}
-.hero-img {
-  background-image: url("../img/background-image.jpg");
-  height: 90%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .fab {
