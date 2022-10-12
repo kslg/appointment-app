@@ -4,8 +4,6 @@ Developer: Krishan Gharu
 
 [Visit this website](https://kslg-appointment-app.herokuapp.com/)
 
-![Responsive Image]()
-
 <br>
 
 ## **Contents**
@@ -581,7 +579,6 @@ class DateInput(forms.DateInput):
 
 ---
 
-## Acknowledgments
+## End of readme.md
 
-
-[Back to contents](#contents)
+---
