@@ -15,7 +15,7 @@ class DateInput(forms.DateInput):
 class AppointmentCreationForm(forms.ModelForm):
     captcha = CaptchaField(
         label='Please enter the characters in the image',
-        required=False,
+        required=True,
         error_messages={'invalid': 'CAPTCHA invalid. Please try again.'}
     )
 
