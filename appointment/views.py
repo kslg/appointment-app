@@ -34,14 +34,14 @@ def appointment_template_view(request):
     if request.method == 'POST':
         form = AppointmentCreationForm(request.POST)
         if form.is_valid():
-            human = True
             form.save()
+            human = True
             messages.success(request, f"Thanks for making an appointment, we\
-                             will email you soon to confirm.")
+                will email you soon to confirm.")
             return redirect('appointment')
         else:
             messages.error(request, f"CAPTCHA Invalid. Letters are case\
-                           sensitive. Please try again.")
+                sensitive. Please try again.")
     return render(request, 'appointment.html', {'form': form})
 
 
