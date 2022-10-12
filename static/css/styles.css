@@ -25,6 +25,10 @@ body{
   HOMEPAGE
 ##############*/
 
+.hero-img {
+  background-image: url("../images/background-image.jpg");
+}
+
 .mb-5 {
   padding-right: 9rem;
 }
