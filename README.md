@@ -2,7 +2,7 @@
 
 Developer: Krishan Gharu
 
-[Visit this website]()
+[Visit this website](https://kslg-appointment-app.herokuapp.com/)
 
 ![Responsive Image]()
 
@@ -270,7 +270,6 @@ Appointment Data is `accessed` when the Teacher `Admin` logs into the Teacher Ad
 
 # Features
 
-
 ## **Navbar**
 
 ![Navbar](/documentation/readme_folder/images/navbar_desktop.png)
@@ -283,31 +282,80 @@ Navbar links:
 
 To satisfy an MPV and keeping the Navbar simple allows Users to become familiar with the app more quickly.
 
-## **Home page**
+## **CRUD Create - Make an Appointment includes Django Simple Captcha**
 
-## **Make Appointment Page**
+### [Go to page](https://kslg-appointment-app.herokuapp.com/make-an-appointment/)
+<br>
 
-## **Login page**
+![Image](/documentation/readme_folder/images/appointment_form_feature.png)
+
+## **CRUD Read - Manage Appointment**
+
+### [Go to page](https://kslg-appointment-app.herokuapp.com/accounts/login/?next=/manage-appointments/)
+<br>
+
+![Image](/documentation/readme_folder/images/crud_read_feature.png)
+
+## **CRUD Update - Manage Appointment**
+
+### [Go to page](https://kslg-appointment-app.herokuapp.com/accounts/login/?next=/manage-appointments/)
+<br>
+
+![Image](/documentation/readme_folder/images/crud_update_feature.png)
+
+## **CRUD Delete - Manage Appointment with Defensive Programming**
+
+### [Go to page](https://kslg-appointment-app.herokuapp.com/accounts/login/?next=/manage-appointments/)
+<br>
+
+![Image](/documentation/readme_folder/images/crud_delete_feature.png)
+
+## **Sign up page**
+
+### [Go to page](https://kslg-appointment-app.herokuapp.com/accounts/login/)
+<br>
+
+![Image](/documentation/readme_folder/images/login_feature.png)
 
 ## **Register page**
 
-## **CRUD Functionalily**
+**NOTE: THIS IS NOT A PUBLIC PAGE - Made for Super Admins to share the link with Teacher Admins**
 
-## **Defensive Programming with Bootstrap Modal**
+### [Go to page](https://kslg-appointment-app.herokuapp.com/accounts/signup/)
+<br>
 
-## **User Athentication**
-
-## **Django Simple CAPTCHA on Make Appointment Page**
+![Image](/documentation/readme_folder/images/signup_feature.png)
 
 ## **Email Confirmation**
 
+**Sent to the `User` when `Admin` accepts the appointment.**
+
+![Image](/documentation/readme_folder/images/email_confirmation_feature.png)
+
+
 ## **Bootstrap Theme**
 
-## **Bootstrap Alerts**
+### [Bootstrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
 
-## **Application Delete Page**
+## **Bootstrap Alert Messages**
 
-## **Time Slot selector**
+### **Succes Alert with Appointment has been created**
+![Image](/documentation/readme_folder/images/alert_success_appointment_feature.png)
+
+### **Warning Alert when Captcha is invalid**
+![Image](/documentation/readme_folder/images/alert_invalid_capthca_feature.png)
+
+### **Success Alert when you login and register**
+![Image](/documentation/readme_folder/images/alert_success_login_feature.png)
+
+### **Success Alert when you delete an Appointment**
+![Image](/documentation/readme_folder/images/alert_success_appointment_delete_feature.png)
+
+### **Success Alert when you logout**
+![Image](/documentation/readme_folder/images/alert_success_logout_feature.png)
+
+
+## **Time Slot selector on Appointment form**
 
 ```Python
   # Time slot options
@@ -323,13 +371,50 @@ To satisfy an MPV and keeping the Navbar simple allows Users to become familiar 
 
 ## **Teacher Dropdown Selector**
 
+**Note:** on_delete CASCADE option not needed as Teachers still exist if an appointment is deleted.
+
+```Python
+class Teacher(models.Model):
+    name = models.CharField(max_length=40)
+
+    def __str__(self):
+        return self.name
+```
+
 ## **Date Picker on Make Appointment Page**
 
+```Python
+# Date Picker for the Appointment form
+class DateInput(forms.DateInput):
+    input_type = 'date'
+```
 
 
 [Back to contents](#contents)
 
 ---
+
+# User Journeys and Manual Testing
+
+***Testing against the Acceptance Criteria in the User Stories.*
+
+| Journey   | Result |
+|-------------|-------------------------------------|
+| 1. As a **User** and **Admin** I want **to see a responsive design that can be used to adapt screen sizes** So that **I have a consistent user experience no matter where and how I use the app.** | `PASS`
+|2. As a **User** I need **to verify myself as a human user and not a bot** so that **I can successfully submit an appointment** | `PASS`
+|6. As a **User** AND **Admin** I can **Create a new appointment** so that **the appointment data is stored in the database.** | `PASS`
+|4. As a **User** and **Admin** I can **see notifications messages on the front-end** so that **I know what what is happening or what has happened**)| `PASS`
+|5. As a **Teacher Admin** I need to **login to the Teacher Admin Area with a user name and password** so that **I can access the appointment data**| `PASS`
+|6. As a **User** I cannot **login to the Teacher Admin Area** so that **I can access the appointment data**| `PASS`
+|7. As a **User** I cannot **signup as a Teacher Admin** so that **I can access the appointment data**| `PASS`
+|8. As an **Admin** I want to **be notified that I have signed out from the admin** So that **I know I have signed out when working on a shared device.**| `PASS`
+|9. As an **Admin** I can **view appointments in the admin area** so that **I can review and edit the appointments.**| `PASS`
+|10. As an **Admin** I can **update the appointment record** by **accepting an appointment**| `PASS`
+|11. When I **Accept an appointment** I expect **the accepted status attribute to be updated for the appointment record in the database**| `PASS`
+|12. As an **Admin** I can **delete the appointment record** so that **the appointment record is removed from the database.**| `PASS`
+|13. As a **Admin** I can **click accept on the appointment which send an email confirmation to the user** so that **the User is notified that the appointment is confirmed.**| `PASS`
+|14. As a **Teacher Admin** wanting to **Delete an appointment, I can see the Modal Pop up asking me to confirm if I want to Delete** so that **the appointment is not deleted by accident.**| `PASS`
+
 
 # Agile Project Management
 
@@ -386,27 +471,39 @@ To satisfy an MPV and keeping the Navbar simple allows Users to become familiar 
 
 ---
 
-## **Technologies used**
+# **Performance**
 
-- ### Languages:
+### **Google Lighthouse Score**
+![Image](/documentation/readme_folder/images/google_lighthouse_score.png)
+
+### **Microsoft Edge Lighthouse score**
+![Image](/documentation/readme_folder/images/microsoft_devtools.png)
+
+[Back to contents](#contents)
+
+---
+
+# **Technologies used**
+
+- ## Languages:
     
     + [Python 3.8.5](https://www.python.org/downloads/release/python-385/): is the main language used to build the back-end.
     + [JS](https://www.javascript.com/): for the CAPTCHA Refesh function and to handle the timeout for bootstrap alerts.
     + [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML): is markup language used to build the front-end templates.
     + [CSS](https://developer.mozilla.org/en-US/docs/Web/css): is styling language used adjust layout and front-end styles.
 
-- ### Frameworks and libraries:
+- ## Frameworks and libraries:
 
     + [Django](https://www.djangoproject.com/): a high-level Python web framework for the app.
     + [Django Simple Captcha](https://pypi.org/project/django-simple-captcha/): is a simple captcha form to prevent automated bot attacks.
     + [Django AllAuth](https://django-allauth.readthedocs.io/en/latest/overview.html): is an integrated set of Django applications dealing with account authentication, registration and management.
     + [CrispyForms](): is an optimised way of rendering forms on the front-end in a very elegant and `DRY` way. 
 
-- ### Databases:
+- ## Databases:
 
     + [PostgreSQL](https://www.postgresql.org/): database to store all data.
 
-- ### Other tools:
+- ## Other tools:
 
     + [Github](https://github.com/): hosting service for software development and version control using Git.
     + [Pip3](https://pypi.org/project/pip/): is the package manager to intstall Python modules and libraries.
@@ -425,40 +522,26 @@ To satisfy an MPV and keeping the Navbar simple allows Users to become familiar 
 
 ---
 
-## Information Architecture
+# Information Architecture
 
-### Database
 
-* During the earliest stages of the project, the database was created using SQLite.
-* The database was then migrated to PostgreSQL.
+## Entity-Relationship Diagram
 
-### Entity-Relationship Diagram
+* The ERD was created using [lucid.app](https://www.lucid.app).
 
-* The ERD was created using [Draw.io](https://www.lucidchart.com/).
-
-- [Database Scheme]()
+![Database Schema](/documentation/readme_folder/images/database_schema.png)
 
 
 
 [Back to contents](#contents)
 
----
-## Testing
-
-Testing against the Acceptance Criteria in the User Stories.
-
-[Back to contents](#contents)
 
 ---
 
 ## Deployment
 
 - The app was deployed to [Heroku](https://heroku.com).
-- The app can be reached by the [link]()
-
-### Local deployment to Staging
-
-### Deployment to Git
+- The app can be reached by the [link](https://kslg-appointment-app.herokuapp.com/)
 
 
 ---
@@ -529,19 +612,8 @@ Testing against the Acceptance Criteria in the User Stories.
 
   ![Heroku. Settings](documentation/deployment/settings_tab.png)
 
-Click on Reveal Config Vars and add the following config variables:
 
-| Key      | Value          |
-|-------------|-------------|
-| DATABASE_URL | ... | 
-| DISABLE_COLLECTSTATIC | 1 |
-| EMAIL_HOST_PASS | ... |
-| EMAIL_HOST_USER | ... |
-| HEROKU_HOSTNAME | ... |
-| SECRET_KEY | ... |
-
-
-* Copy the value of DATABASE_URL and input it into the .env file and generate a secret key (you may use [Djecrety](https://djecrety.ir/) for secret key generation).
+* Copy the value of DATABASE_URL and input it into the .env file and generate a secret key (you may use [miniwebtool](https://miniwebtool.com/django-secret-key-generator/).
 * Create EMAIL_HOST_PASS and EMAIL_HOST_USER with a gmail account and add values to these keys.
 * Migrate changes.
 * Set debug to False in settings.py
@@ -574,10 +646,12 @@ Click "View build logs" to see the progress of the deployment.
 | deploy new version of the app | `git push heroku main` | |
 | rename app | `git remote rename NAME-OF-YOUR-APP NAME-OF-YOUR-APP-2` | |
 
-**Final Deployment**
+**Final Deployment Process**
 
-* Set debug to False locally + delete DISABLE_COLLECTSTATIC from config vars in Heroku dashboard.
-* Commit and push the changes to GitHub.
+* Set DEBUG=False in settings.py.
+* Delete DISABLE_COLLECTSTATIC from Config Vars in Heroku dashboard.
+* Commit and push the changes to GitHub. 
+* Trigger a deplopyment in Heroku
 
 [Back to contents](#contents)
 ---
