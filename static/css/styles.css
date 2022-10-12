@@ -97,6 +97,12 @@ body, html {
   APPOINTMENT.HTML
 ##############*/
 
+.badge-success {
+  color: #fff;
+  background-color: #28a745;
+  font-size: 1rem;
+}
+
 .appointment-background {
   background-color: #5c724a;
 }
@@ -195,6 +201,10 @@ textarea {
 /*########################
   MANAGE.APPOINTMENT.HTML
 ###########################*/
+
+.manage-id {
+  display: none;
+}
 
 .card-margin {
   margin-bottom: 1.875rem;
