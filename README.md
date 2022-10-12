@@ -546,105 +546,8 @@ class DateInput(forms.DateInput):
 
 ---
 
-1. Install the dependencies:
-
-    - Open the terminal window and type:
-    - `pip3 install -r requirements.txt`
-
-
-1. Create a `.gitignore` file in the root directory of the project where you should add env.py and __pycache__ files to prevent the privacy of your secret data.
-
-1. Create a `.env` file. This will contain the following environment variables:
-
-    ```python
-    import os
-      os.environ['SECRET_KEY'] = 'Add a secret key'
-      os.environ['DATABASE_URL'] = 'will be used to connect to the database'
-      os.environ['DEBUG'] = 'True'
-    ```
-
-    *During the development stage DEBUG is set to True, but it is vital to change it to False.*
-
-1. Run the following commands in a terminal to make migrations: 
-    - `python3 manage.py makemigrations`
-    - `python3 manage.py migrate`
-1. Create a superuser to get access to the admin environment.
-    - `python3 manage.py createsuperuser`
-    - Enter the required information (your username, email and password).
-1. Run the app with the following command in the terminal:
-    - `python3 manage.py runserver`
-1. Open the link provided in a browser to see the app.
-
-1. If you need to access the admin page:
-    - Add /admin/ to the link provided.
-    - Enter your username and password (for the superuser that you have created before).
-    - You will be redirected to the admin page.
-
 
 ### Heroku Deployment
-
-* Set up a local workspace on your computer for Heroku:
-    - Create a list of requirements that the project needs to run:
-      - type this in the terminal: `pip3 freeze > requirements.txt`
-    - Commit and push the changes to GitHub
-    
-* Go to [www.heroku.com](www.heroku.com) 
-* Log in or create a Heroku account.
-* Create a new app with any unique name <name app>.
-
-  ![Heroku. Create New App](documentation/deployment/new_heroku_app.png)
-
-* Create a Procfile in your local workplace:
-
-  ![Heroku. Procfile](documentation/deployment/heroku_procfile.png)
-    
-    This file will will contain the following:
-    ```python
-        web: gunicorn <name app>.wsgi:application
-    ```
-    - Commit and push the changes to GitHub.
-
-* Go to resources in Heroku and search for postgresql. Select Hobby dev - Free and click on the provision button to add it to the project.
-
-  ![Heroku. Postgres](documentation/deployment/heroku_postgres.png)
-
-* Go to the settings app in Heroku and go to Config Vars.
-
-  ![Heroku. Settings](documentation/deployment/settings_tab.png)
-
-
-* Copy the value of DATABASE_URL and input it into the .env file and generate a secret key (you may use [miniwebtool](https://miniwebtool.com/django-secret-key-generator/).
-* Create EMAIL_HOST_PASS and EMAIL_HOST_USER with a gmail account and add values to these keys.
-* Migrate changes.
-* Set debug to False in settings.py
-* Commit and push the changes to GitHub.
-* Connect your repository to Heroku.
-
-  ![Heroku. Connect to Heroku](documentation/deployment/heroku_connect_github.png)
-
-* Deploy the app to Heroku by clicking "Deploy Branch" button. If you want to enable auto-deployment, click "Enable Automatic Deployment".
-
-  ![Heroku. Deploy to Heroku](documentation/deployment/heroku_deploy_branch.png) 
-
-
-The deployment process will start.
-
-  ![Heroku. Deploy to Heroku](documentation/deployment/heroku_deploying.png) 
-
-Click "View build logs" to see the progress of the deployment.
-
-  ![Heroku. Deploy to Heroku](documentation/deployment/heroku_deploying_view.png)
-
-
-*Due to security updates, Heroku dashboard will not allow you to deploy your app from GitHub. Thus, you need to run the following commands in your terminal:*
-
-| action | terminal command | comment |
-| ------ | ---------------- | ------- |
-| login to your heroku account | `heroku login -i` | |
-| create a new app on heroku | `heroku create NAME-OF-YOUR-APP` | if you haven't created the app before, and then, you can access the app via the Heroku dashboard and set up your config vars.|
-| add remote to your local repository | `heroku git:remote -a NAME-OF-YOUR-APP` | if you have already created app on Heroku (before the security updates) and connected it using Heroku dashboard |
-| deploy new version of the app | `git push heroku main` | |
-| rename app | `git remote rename NAME-OF-YOUR-APP NAME-OF-YOUR-APP-2` | |
 
 **Final Deployment Process**
 
@@ -654,20 +557,28 @@ Click "View build logs" to see the progress of the deployment.
 * Trigger a deplopyment in Heroku
 
 [Back to contents](#contents)
+
 ---
 
 ## Credits
 
-- [GitHub](https://github.com/) for giving the idea of the project's design.
-- [Django](https://www.djangoproject.com/) for the framework.
-- [Font awesome](https://fontawesome.com/): for the free access to icons.
-- [Heroku](https://www.heroku.com/): for the free hosting of the website.
-- [jQuery](https://jquery.com/): for providing varieties of tools to make standard HTML code look appealing.
-- [Postgresql](https://www.postgresql.org/): for providing a free database.
-- [Favicon Generator. For real.](https://realfavicongenerator.net/): for providing a free platform to generate favicons.
+- [Date Picker](https://stackoverflow.com/questions/3367091/whats-the-cleanest-simplest-to-get-running-datepicker-in-django)
+- [Customise User Registration, Login, and Logout in Django](https://ordinarycoders.com/blog/article/django-user-register-login-logout)
+- [What is PEP8's E128: continuation line under-indented for visual indent?](https://stackoverflow.com/questions/15435811/what-is-pep8s-e128-continuation-line-under-indented-for-visual-indent)
+- [How to Create a Drop-down List in a Django Form](http://www.learningaboutelectronics.com/Articles/How-to-create-a-drop-down-list-in-a-Django-form.php)
+- [Django @login_required for class views](https://stackoverflow.com/questions/28555260/django-login-required-for-class-views)
+- [Django message upon logout is confusing to users #2031](https://github.com/pennersr/django-allauth/issues/2031)
+- [Bootstrap 4 Alerts](https://getbootstrap.com/docs/4.6/components/alerts/)
+- [Django Simple Captcha](https://django-simple-captcha.readthedocs.io/en/latest/usage.html)
+- [Colour Pallete](https://www.color-hex.com/color-palette/1006818)
+- [What is CAPTCHA](https://support.google.com/a/answer/1217728?hl=en#:~:text=CAPTCHA%20offers%20protection%20from%20remote,must%20to%20pass%20the%20test.)
+- [How to auto close an alert after few seconds with Bootstrap?](https://stackoverflow.com/questions/68165290/how-to-auto-close-an-alert-after-few-seconds-with-bootstrap)
+- [Bootstrap Modal](https://getbootstrap.com/docs/4.6/components/modal/)
+
 
 
 [Back to contents](#contents)
+
 ---
 
 ## Acknowledgments
