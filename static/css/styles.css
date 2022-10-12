@@ -45,10 +45,7 @@ body{
   word-wrap: break-word;
   background-color: rgba(246, 240, 188, 0.7);
   background-clip: border-box;
-  border: 1px solid background-color: rgba(25, 18, 232, 0.2);
-  border-radius: 8px;
-  padding-right: 4rem;
-  height: 170px;
+  border: 1px solid 
 }
 
 .btn-light {
@@ -190,10 +187,6 @@ ul {
   list-style-type: none;
 }
 
- {
-  grid-template-columns:
-}
-
 textarea {
   height: 7em;
   width: 16em;
@@ -219,16 +212,16 @@ textarea {
   padding-bottom: 24rem!important;
 }
 
-.manage-cards .btn-primary {
+.manage-cards .btn {
   background-color:#5c724a;
   color: #f5f5d5;
   border-color: #5c724a 
 }
 
-.manage-cards .btn-primary:hover {
+.manage-cards .btn:hover {
   background-color: #f5f5d5;
-  border-color: #5c724a;
   color: #354a2f;
+  border-color: #5c724a;
 }
 
 .card {
@@ -1001,7 +994,15 @@ text-transform: uppercase;
 @media (min-width:320px) {
   .homepage-content.card{
     padding-right: 1rem;
-    height: 168px;
+    height: 146px;
+    margin-top: -1rem;
+  }
+}
+
+@media (min-width:320px) {
+  .homepage-content.card h2{
+    font-size: 25px;
+    padding-top: 0.5rem;
   }
 }
 
