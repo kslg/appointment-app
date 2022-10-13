@@ -10,54 +10,26 @@ Developer: Krishan Gharu
 
 * [About](#about)
 * [User Experience Design](#user-experience-design)
-  * [Strategy Plane](#strategy-plane)
-    * [Target Audience](#target-audience)
-    * [Mission Objectives](#mission-objectives)
-    * [The Why](#The-Why)
-    * [Ideas & Inspiration Mind Map:](#The-Inspiration-and-Ideas-Map)
-    * [Demographic](#Demographic)
-    * [Colour Palette Ideas](#Colour-Palette-Ideas)
-    * [Content Strategy](#Content-Strategy)
-    * [Typography](#Typography)
-  * [The Scope Plane](#the-scope-plane)
-    * [Functional Requirements](#functional-requirements)
-    * [Content Requirements](#content-requirements)
-    * [Interaction Design](#interaction-design) 
-    * [Scope of MVP](#scope-of-mvp)
-  * [The Structure Plane](#The-Structure-Plane)
-    * [Site Architecture](#Site-Architecture)
-    * [Roles and Processes](#Roles-and-Processes)
-  * [The Skeleton Plane](#The-Structure-Plane)
-    * [User Interface](#User-Interface)
-    * [Manifestations of Data](#Manifestations-of-Data)
-    * [Progressive Disclosure](#Progressive-Disclosure)
-    * [Header and Footer](#Header-and-Footer)
-    * [Navigation](#Navigation)
-    * [CTA Buttons](#CTA-Buttons)
-  * [The Surface Plane](#The-Surface-Plane)
-  * [User Journeys](#)
-  * [Teacher Admin Journeys](#)
+* [Strategy Plane](#strategy-plane)
+* [The Scope Plane](#the-scope-plane)
+* [The Structure Plane](#the-structure-plane)
+* [The Skeleton Plane](#the-skeleton-plane)
+* [Manifestations of Data](#manifestations-of-data)
+* [The Surface Plane](#the-surface-plane)
+* [Features](#features)
+* [User Journeys and Manual Testing](#user-journeys-and-manual-testing)
 * [Agile Project Management](#agile-project-management)
-  * [User Stories - User](#user-stories---user)
-  * [User Stories - Teacher Admin](#user-stories---teacher-admin)
-  * [Tasks](#tasks)
-  * [Bugs and Issues](#bugs-and-issues)
-  * [Non-Related Visitor](#)
-* [Technologies used](#Technologies-used)
-* [Libraries used](#)
-* [App Features and Highlights](#Features)
-* [Information Architecture](#Information-Architecture)
-  * [Database](#Database)
-  * [Entity-Relationship Diagram](#Entity-Relationship-Diagram)
-  * [Data Modeling](#Data-Modeling)
-* [Testing](#Testing)
-* [Deployment](#Deployment)
-  * [Local deployment](#Local-deployment)
-  * [Heroku Deployment](#Heroku-Deployment)
+* [Performace](#performance)
+* [Technologies Used](#technologies-used)
+* [Information Architecture](#information-architecture)
+* [Deployment](#deployment)
+* [Heroku Deployment](#heroku-deployment)
+* [Credits](#credits)
+* [Future Features](#future-features)
+* [Unfortunate Bug](#unfortunate-bug)
+* [w3c Markup Valiation notice](#w3c-markup-valiation-notice)
 
-* [Credits](#Credits)
-
-* [Acknowledgments](#Acknowledgments)
+---
 
 # About
 
@@ -116,7 +88,7 @@ Montserrat was used due to it's warm style and being easy to read. The are quali
 
 [Back to contents](#contents)
 
-# Scope Plane:
+# The Scope Plane:
 
 ## Functional Requirements:
 
@@ -263,6 +235,10 @@ Appointment Data is `accessed` when the Teacher `Admin` logs into the Teacher Ad
 
 
 # The Surface Plane:
+
+## **Mobile First Design**
+
+![Image](/documentation/readme_folder/images/mobile_first_design.png)
 
 ---
 
@@ -545,7 +521,7 @@ class DateInput(forms.DateInput):
 ---
 
 
-### Heroku Deployment
+## Heroku Deployment
 
 **Final Deployment Process**
 
@@ -576,6 +552,25 @@ class DateInput(forms.DateInput):
 
 
 [Back to contents](#contents)
+
+---
+
+# Future Features
+1. Users could manage thier own appointments.
+2. Add Relational Database model between Teacher, Class and Child.
+3. Restrict appointment dates in the past.
+
+[Back to contents](#contents)
+
+# Unfortunate Bug
+Not able to load hero image on the homepage. Seeing an error in the console:
+Failed to load resource: the server responded with a status of 404 ()
+
+# w3c Markup Valiation notice
+
+Upon chekcing the markup validation for the appointment page I can see alerts related to the captcha but these are not elements i can easlily get to and resolve.
+
+![Database Schema](/documentation/readme_folder/images/w3cvaliadation_captcha.png)
 
 ---
 
