@@ -33,11 +33,11 @@ Developer: Krishan Gharu
 
 # About
 
-[Fairchild School Appointment App](http link) is for a fictitious school called Fairchild School, and allows Parents, Guardians, Carers to book a consultation with their child’s Teacher. The App is responsive so Parent can book and Teachers can manage appointments on mobile and tablet devices.
+[Fairchild School Appointment App](https://kslg-appointment-app.herokuapp.com/) is for a fictitious school called Fairchild School, and allows Parents, Guardians, Carers to book a consultation with their child’s Teacher. The App is responsive so Parent can book and Teachers can manage appointments on mobile and tablet devices.
 
 The app is developed by [Krishan Gharu](https://github.com/kslg).
 
-Repository: [GitHub Repo](http link)
+Repository: [GitHub Repo](https://github.com/kslg/appointment-app)
 
 
 [Back to contents](#contents)
@@ -127,7 +127,7 @@ Montserrat was used due to it's warm style and being easy to read. The are quali
 - `Public` Booking form for the `User` to create the appointment.
 - `Public with Restrictions` Admin area to Teacher `Admin` to manage the appointments.
 - `Public` Login Page
-- `Private` Teacher `Admin` Register Page - Not public facing page. This will be a private link shared to Teachers.
+- `Private` Teacher `Admin` Register Page - **Not public facing page. This will be a private link shared to Teachers.**
 
 [Back to contents](#contents)
 
