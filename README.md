@@ -24,7 +24,7 @@ Developer: Krishan Gharu
 * [Information Architecture](#information-architecture)
 * [Deployment](#deployment)
 * [Heroku Deployment](#heroku-deployment)
-* [Credits](#credits)
+* [Credits and Acknowledgements](#credits-and-acknowledgements)
 * [Future Features](#future-features)
 * [Unfortunate Bug](#unfortunate-bug)
 * [w3c Markup Valiation notice](#w3c-markup-valiation-notice)
@@ -534,7 +534,7 @@ class DateInput(forms.DateInput):
 
 ---
 
-## Credits
+## Credits and Acknowledgements
 
 - [Date Picker](https://stackoverflow.com/questions/3367091/whats-the-cleanest-simplest-to-get-running-datepicker-in-django)
 - [Customise User Registration, Login, and Logout in Django](https://ordinarycoders.com/blog/article/django-user-register-login-logout)
@@ -548,6 +548,8 @@ class DateInput(forms.DateInput):
 - [What is CAPTCHA](https://support.google.com/a/answer/1217728?hl=en#:~:text=CAPTCHA%20offers%20protection%20from%20remote,must%20to%20pass%20the%20test.)
 - [How to auto close an alert after few seconds with Bootstrap?](https://stackoverflow.com/questions/68165290/how-to-auto-close-an-alert-after-few-seconds-with-bootstrap)
 - [Bootstrap Modal](https://getbootstrap.com/docs/4.6/components/modal/)
+- Insipred by the `Hello Django Project` and the `I Think Threfore I Blog Project`
+- Readme.md layout inspired fellow student Luliia Konovalova (Juliia_Konn_5P)  
 
 
 
