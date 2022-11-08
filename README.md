@@ -549,7 +549,7 @@ class DateInput(forms.DateInput):
 - [How to auto close an alert after few seconds with Bootstrap?](https://stackoverflow.com/questions/68165290/how-to-auto-close-an-alert-after-few-seconds-with-bootstrap)
 - [Bootstrap Modal](https://getbootstrap.com/docs/4.6/components/modal/)
 - Insipred by the `Hello Django Project` and the `I Think Threfore I Blog Project`
-- Readme.md layout inspired fellow student Luliia Konovalova (Juliia_Konn_5P)  
+- Readme.md layout inspired by fellow student Luliia Konovalova (Juliia_Konn_5P)  
 
 
 
